@@ -1,4 +1,5 @@
 import Fluent
+import Foundation
 
 struct AddTasks: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
