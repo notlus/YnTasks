@@ -7,6 +7,11 @@ struct TODOListController {
         return NTDList.query(on: req.db).with(\.$tasks).all()
     }
 
+    func get(req: Request) -> EventLoopFuture<NTDList> {
+        return NTDList.find(req.parameters.get("listID"), on: req.db)
+            .unwrap(or: Abort(.notFound))
+    }
+
     func create(req: Request) throws -> EventLoopFuture<NTDList> {
         let newList = try req.content.decode(NTDList.self)
         return newList.save(on: req.db).map { newList }

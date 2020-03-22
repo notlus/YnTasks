@@ -15,6 +15,7 @@ func routes(_ app: Application) throws {
 
     let listController = TODOListController()
     app.get("api", "lists", use: listController.getAll)
+    app.get("api", "list", ":listID", use: listController.get)
     app.post("api", "lists", use: listController.create)
 
     let todoController = TaskController()
