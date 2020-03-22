@@ -13,7 +13,7 @@ func routes(_ app: Application) throws {
         return "square: \(value * value)"
     }
 
-    let todoController = TodoController()
+    let todoController = TaskController()
     app.get("todos", use: todoController.index)
     app.get("api", "todos", use: todoController.getAll)
     app.get("todo", ":todoID", use: todoController.get)

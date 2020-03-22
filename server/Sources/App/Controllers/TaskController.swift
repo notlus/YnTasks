@@ -1,7 +1,7 @@
 import Fluent
 import Vapor
 
-struct TodoController {
+struct TaskController {
     func getAll(req: Request) throws -> EventLoopFuture<[NTDTask]> {
         return NTDTask.query(on: req.db).all()
     }
