@@ -22,6 +22,6 @@ func routes(_ app: Application) throws {
     app.get("todos", use: todoController.index)
     app.get("api", "todos", use: todoController.getAll)
     app.get("todo", ":todoID", use: todoController.get)
-    app.post("todos", use: todoController.create)
-    app.delete("todos", ":todoID", use: todoController.delete)
+    app.post("api", "todo", use: todoController.create)
+    app.delete("api", "todo", ":todoID", use: todoController.delete)
 }

@@ -11,15 +11,15 @@ struct TaskController {
             .flatMap { (todos: [NTDTask]) -> EventLoopFuture<View> in
                 let data = ["todos": todos]
                 return req.view.render("todos", data)
-        }
+            }
     }
 
     func get(req: Request) throws -> EventLoopFuture<View> {
         return NTDTask.find(req.parameters.get("todoID"), on: req.db)
             .unwrap(or: Abort(.notFound))
             .flatMap { (todo: NTDTask) -> EventLoopFuture<View> in
-                return req.view.render("todo", todo)
-        }
+                req.view.render("todo", todo)
+            }
     }
 
     func create(req: Request) throws -> EventLoopFuture<NTDTask> {
