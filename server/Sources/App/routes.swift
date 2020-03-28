@@ -13,15 +13,15 @@ func routes(_ app: Application) throws {
         return "square: \(value * value)"
     }
 
-    let listController = TODOListController()
+    let listController = ListsController()
     app.get("api", "lists", use: listController.getAll)
     app.get("api", "list", ":listID", use: listController.get)
     app.post("api", "lists", use: listController.create)
 
-    let todoController = TaskController()
-    app.get("todos", use: todoController.index)
-    app.get("api", "todos", use: todoController.getAll)
-    app.get("todo", ":todoID", use: todoController.get)
-    app.post("api", "todo", use: todoController.create)
-    app.delete("api", "todo", ":todoID", use: todoController.delete)
+    let taskController = TasksController()
+    app.get("todos", use: taskController.index)
+    app.get("api", "todos", use: taskController.getAll)
+    app.get("todo", ":todoID", use: taskController.get)
+    app.post("api", "todo", use: taskController.create)
+    app.delete("api", "todo", ":todoID", use: taskController.delete)
 }
