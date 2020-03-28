@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "NotTODO",
+    name: "JSTasks",
     platforms: [
        .macOS(.v10_15)
     ],
