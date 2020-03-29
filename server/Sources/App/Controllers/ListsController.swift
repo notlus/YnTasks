@@ -9,9 +9,14 @@ struct ListsController {
     }
 
     /// Get a single TODO list, and its tasks
-    func get(req: Request) -> EventLoopFuture<ListModel> {
+    func get(req: Request) -> EventLoopFuture<[TaskModel]> {
         return ListModel.find(req.parameters.get("listID"), on: req.db)
             .unwrap(or: Abort(.notFound))
+            .flatMap {
+                $0.$tasks
+                    .query(on: req.db)
+                    .all()
+            }
     }
 
     /// Create a new TODO list with an empty task list
