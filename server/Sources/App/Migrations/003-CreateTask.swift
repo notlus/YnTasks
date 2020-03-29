@@ -5,6 +5,9 @@ struct CreateTask: Migration {
         return database.schema("tasks")
             .id()
             .field("title", .string, .required)
+            .field("priority", .int, .required)
+            .field("notes", .string)
+            .field("due", .date)
             .field("list_id", .int, .references("lists", "id"))
             .create()
     }
