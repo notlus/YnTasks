@@ -9,7 +9,7 @@ import Fluent
 import Vapor
 
 /// Represents a TODO list and its tasks.
-final class NTDList: Content, Model {
+final class ListModel: Content, Model {
     static let schema = "lists"
 
     @ID(custom: "id")
@@ -19,7 +19,7 @@ final class NTDList: Content, Model {
     var name: String
 
     @Children(for: \.$list)
-    var tasks: [NTDTask]
+    var tasks: [TaskModel]
 
     init() {}
 

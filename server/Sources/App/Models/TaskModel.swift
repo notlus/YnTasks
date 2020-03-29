@@ -1,7 +1,7 @@
 import Fluent
 import Vapor
 
-final class NTDTask: Content, Model {
+final class TaskModel: Content, Model {
     static let schema = "tasks"
 
     @ID(key: .id)
@@ -11,7 +11,7 @@ final class NTDTask: Content, Model {
     var title: String
 
     @Parent(key: "list_id")
-    var list: NTDList
+    var list: ListModel
 
     init() {}
 
