@@ -2,26 +2,46 @@ import Fluent
 import Vapor
 
 func routes(_ app: Application) throws {
+
+    /// The default route returns all lists and their tasks
     app.get { req -> Response in
-        return req.redirect(to: "/todos")
+        return req.redirect(to: "api/lists")
     }
 
-    app.get("square", ":value") { req -> String in
-        guard let value = req.parameters.get("value", as: Int.self) else {
-            throw Abort(.badRequest)
-        }
-        return "square: \(value * value)"
+    /// A route to get the health of the app
+    app.get("health") { req -> String in
+        return "ok"
     }
+
+    // MARK: Lists API routes
 
     let listController = ListsController()
+
+    /// Get all lists and their tasks
     app.get("api", "lists", use: listController.getAll)
+
+    /// Get a list by its ID
     app.get("api", "list", ":listID", use: listController.get)
+
+    /// Create a new list
     app.post("api", "lists", use: listController.create)
 
+    // MARK: Tasks API routes
+    
     let taskController = TasksController()
-    app.get("todos", use: taskController.index)
-    app.get("api", "todos", use: taskController.getAll)
-    app.get("todo", ":todoID", use: taskController.get)
-    app.post("api", "todo", use: taskController.create)
-    app.delete("api", "todo", ":todoID", use: taskController.delete)
+
+    /// Get all tasks
+    app.get("api", "tasks", use: taskController.getAll)
+
+    /// Get a task by its ID
+    app.get("api", "task", ":taskID", use: taskController.get)
+
+    /// Create  task
+    app.post("api", "task", use: taskController.create)
+
+    /// Update an existing task
+    app.put("api", ":taskID", use: taskController.update)
+
+    /// Delete a task
+    app.delete("api", "task", ":taskID", use: taskController.delete)
 }

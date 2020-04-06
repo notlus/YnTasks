@@ -15,20 +15,25 @@ struct TasksController {
     }
 
     func get(req: Request) throws -> EventLoopFuture<View> {
-        return TaskModel.find(req.parameters.get("todoID"), on: req.db)
+        return TaskModel.find(req.parameters.get("taskID"), on: req.db)
             .unwrap(or: Abort(.notFound))
-            .flatMap { (todo: TaskModel) -> EventLoopFuture<View> in
-                req.view.render("todo", todo)
+            .flatMap { (task: TaskModel) -> EventLoopFuture<View> in
+                req.view.render("task", task)
             }
     }
 
     func create(req: Request) throws -> EventLoopFuture<TaskModel> {
-        let todo = try req.content.decode(TaskModel.self)
-        return todo.save(on: req.db).map { todo }
+        let task = try req.content.decode(TaskModel.self)
+        return task.save(on: req.db).map { task }
+    }
+
+    func update(req: Request) throws -> EventLoopFuture<TaskModel> {
+        let task = try req.content.decode(TaskModel.self)
+        return task.update(on: req.db).map { task }
     }
 
     func delete(req: Request) throws -> EventLoopFuture<HTTPStatus> {
-        return TaskModel.find(req.parameters.get("todoID"), on: req.db)
+        return TaskModel.find(req.parameters.get("taskID"), on: req.db)
             .unwrap(or: Abort(.notFound))
             .flatMap { $0.delete(on: req.db) }
             .transform(to: .ok)
