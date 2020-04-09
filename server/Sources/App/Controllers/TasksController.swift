@@ -3,15 +3,9 @@ import Vapor
 
 struct TasksController {
     func getAll(req: Request) throws -> EventLoopFuture<[TaskModel]> {
-        return TaskModel.query(on: req.db).all()
-    }
-
-    func index(req: Request) throws -> EventLoopFuture<View> {
-        return try self.getAll(req: req)
-            .flatMap { (todos: [TaskModel]) -> EventLoopFuture<View> in
-                let data = ["todos": todos]
-                return req.view.render("todos", data)
-            }
+        return TaskModel.query(on: req.db)
+            .with(\.$list)
+            .all()
     }
 
     func get(req: Request) throws -> EventLoopFuture<View> {
@@ -27,9 +21,24 @@ struct TasksController {
         return task.save(on: req.db).map { task }
     }
 
+    /// Update an existing `TaskModel`
     func update(req: Request) throws -> EventLoopFuture<TaskModel> {
-        let task = try req.content.decode(TaskModel.self)
-        return task.update(on: req.db).map { task }
+        let updatedTask = try req.content.decode(TaskModel.self)
+
+        return TaskModel.query(on: req.db)
+            .with(\.$list)
+            .filter(\.$id == updatedTask.id!)
+            .first()
+            .unwrap(or: Abort(.notFound))
+            .flatMap { existingTask -> EventLoopFuture<TaskModel> in
+                existingTask.title = updatedTask.title
+                existingTask.priority = updatedTask.priority
+                existingTask.dueDate = updatedTask.dueDate
+                existingTask.notes = updatedTask.notes
+
+                return existingTask.update(on: req.db)
+                    .map { existingTask }
+            }
     }
 
     func delete(req: Request) throws -> EventLoopFuture<HTTPStatus> {

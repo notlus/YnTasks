@@ -40,7 +40,7 @@ func routes(_ app: Application) throws {
     app.post("api", "task", use: taskController.create)
 
     /// Update an existing task
-    app.put("api", ":taskID", use: taskController.update)
+    app.patch("api", "task", ":taskID", use: taskController.update)
 
     /// Delete a task
     app.delete("api", "task", ":taskID", use: taskController.delete)
