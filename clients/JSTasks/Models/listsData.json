@@ -1,0 +1,64 @@
+[
+{
+  "id": 1,
+  "tasks": [
+    {
+      "id": "7EE19B39-377C-493E-BB0C-14DAF4DF9455",
+      "notes": null,
+      "title": "task 1",
+      "list": {
+        "id": 1
+      },
+      "complete": false,
+      "dueDate": null,
+      "priority": 0
+    },
+    {
+      "id": "888066C1-C487-43F6-A33E-C3F902CD6B51",
+      "notes": null,
+      "title": "task 4",
+      "list": {
+        "id": 1
+      },
+      "priority": 3,
+      "complete": false,
+      "dueDate": null
+    }
+  ],
+  "name": "Home"
+},
+{
+  "id": 2,
+  "tasks": [
+    {
+      "id": "1C8E8EA6-E003-47FD-A4A9-041946407E8D",
+      "notes": null,
+      "title": "task 2",
+      "list": {
+        "id": 2
+      },
+      "priority": 0,
+      "dueDate": null,
+      "complete": false
+    }
+  ],
+  "name": "Work"
+},
+{
+  "id": 3,
+  "tasks": [
+    {
+      "id": "9226C2CA-AEF2-4A9B-9377-42D796C93348",
+      "notes": null,
+      "title": "task 3",
+      "list": {
+        "id": 3
+      },
+      "priority": 0,
+      "complete": false,
+      "dueDate": "2020-04-11T00:00:00Z"
+    }
+  ],
+  "name": "Learn"
+}
+]
