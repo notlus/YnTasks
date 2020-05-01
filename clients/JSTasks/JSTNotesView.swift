@@ -21,9 +21,9 @@ struct NTDNotesViewSeparator: View {
     }
 }
 
-struct NotesView: View {
+struct JSTNotesView: View {
     var priorities = ["None", "High", "Medium", "Low"]
-    @Binding var todo: Todo
+    @Binding var todo: JSTTaskModel
     @State private var remindOnDate = false
     @State private var remindAtLocation = false
     @State private var selectedPriority = 0
@@ -31,16 +31,16 @@ struct NotesView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
 
-            Text(todo.task)
+            Text(todo.title)
                 .font(.headline)
                 .padding()
 
-            TextField("Notes", text: self.$todo.notes, onCommit: {
-                print("onCommit")
-            })
-                .lineLimit(10)
-                .multilineTextAlignment(TextAlignment.leading)
-                .padding([.leading, .trailing])
+//            TextField("Notes", text: self.$todo.notes, onCommit: {
+//                print("onCommit")
+//            })
+//                .lineLimit(10)
+//                .multilineTextAlignment(TextAlignment.leading)
+//                .padding([.leading, .trailing])
 
             NTDNotesViewSeparator()
 
@@ -84,6 +84,6 @@ struct NotesView: View {
 
 struct NotesView_Previews: PreviewProvider {
     static var previews: some View {
-        NotesView(todo: .constant(todoData[0].todos[0]))
+        return JSTNotesView(todo: .constant(JSTTaskModel(id: UUID(), list: JSTTaskModel.ListInfo(id: 1, name: "Preview"))))
     }
 }

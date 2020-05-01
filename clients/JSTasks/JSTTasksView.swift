@@ -1,6 +1,6 @@
 //
-//  NTDTodosView.swift
-//  NotTODO
+//  JSTTasksView.swift
+//  JSTasks
 //
 //  Created by Jeffrey Sulton on 2/16/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -8,15 +8,13 @@
 
 import SwiftUI
 
-struct NTDTodosView: View {
-    public var listName: String
-    public var todos: [Todo]
-    @State private var selectedRow: Int?
+struct JSTTasksView: View {
+    var list: JSTList
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(self.listName)
+                Text(self.list.name)
                     .font(.title)
                     .bold()
                     .foregroundColor(Color.red)
@@ -25,19 +23,22 @@ struct NTDTodosView: View {
                 Spacer()
 
                 VStack {
-                    Button("Add") {
+                    Button("+") {
+                        // TODO: Add new task
                         print("add")
 //                        todos.append(Todo(id: Int.random(in: 100..<1000), task: "New Task"))
                     }
+                    .font(.headline)
 
-                    Text("\(todos.count)")
+                    Text("\(list.tasks.count)")
                 }
                 .padding()
             }
 
-            List(selection: $selectedRow) {
-                ForEach(todos) { todo in
-                    NTDRowView(todo: todo)
+//            List(selection: $selectedRow) {
+            List {
+                ForEach(list.tasks, id: \.id) { task in
+                    JSTRowView(taskModel: task)
                 }
             }
             .listStyle(PlainListStyle())
@@ -47,7 +48,7 @@ struct NTDTodosView: View {
 
 struct NTDListView_Previews: PreviewProvider {
     static var previews: some View {
-        NTDTodosView(listName: "Work", todos: TodoItems().todos[0].todos)
-            .environmentObject(TodoItems())
+        let tasks = [JSTTaskModel(list: JSTTaskModel.ListInfo(id: 1, name: "task"))]
+        return JSTTasksView(list: JSTList(id: 1, name: "preview", tasks: tasks))
     }
 }

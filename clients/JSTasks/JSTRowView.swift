@@ -8,17 +8,18 @@
 
 import SwiftUI
 
-struct NTDRowView: View {
-    @State public var todo: Todo
+struct JSTRowView: View {
+//    @ObservedObject var task = JSTaskModel()
+    @State public var taskModel: JSTTaskModel
     @State private var showNotes = false
 
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
-                    Toggle(isOn: $todo.complete) {
+                    Toggle(isOn: $taskModel.complete) {
 //                        if !todo.complete {
-                        TextField("What do you want to do?", text: $todo.task, onEditingChanged: { change in
+                        TextField("What do you want to do?", text: $taskModel.title, onEditingChanged: { change in
                             print("change: \(change)")
                         })
                             .font(.subheadline)
@@ -37,15 +38,15 @@ struct NTDRowView: View {
                         .padding([.leading, .trailing])
                 }
             }
-            .popover(isPresented: self.$showNotes, arrowEdge: .trailing) {
-                NotesView(todo: self.$todo)
-            }
+//            .popover(isPresented: self.$showNotes, arrowEdge: .trailing) {
+//                NotesView(todo: self.$todo)
+//            }
         }
     }
 }
 
-struct NTDRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        NTDRowView(todo: todoData[0].todos[0])
-    }
-}
+// struct NTDRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NTDRowView(todo: JSTaskModel(id: UUID(), title: "one", list: ListInfo(id: 1, name: "Work")))
+//    }
+// }
