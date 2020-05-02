@@ -1,6 +1,6 @@
 //
-//  NotesView.swift
-//  NotTODO
+//  JSTNotesView.swift
+//  JSTasks
 //
 //  Created by Jeffrey Sulton on 3/14/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct NTDNotesViewSeparator: View {
+struct JSTNotesViewSeparator: View {
     var body: some View {
         Path { path in
             path.move(to: CGPoint(x: 50, y: 0))
@@ -23,26 +23,25 @@ struct NTDNotesViewSeparator: View {
 
 struct JSTNotesView: View {
     var priorities = ["None", "High", "Medium", "Low"]
-    @Binding var todo: JSTTaskModel
+    @Binding var task: JSTTaskModel
     @State private var remindOnDate = false
     @State private var remindAtLocation = false
     @State private var selectedPriority = 0
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-
-            Text(todo.title)
+            Text(task.title)
                 .font(.headline)
                 .padding()
 
-//            TextField("Notes", text: self.$todo.notes, onCommit: {
-//                print("onCommit")
-//            })
-//                .lineLimit(10)
-//                .multilineTextAlignment(TextAlignment.leading)
-//                .padding([.leading, .trailing])
+            TextField("Notes", text: self.$task.notes, onCommit: {
+                print("onCommit")
+            })
+                .lineLimit(10)
+                .multilineTextAlignment(TextAlignment.leading)
+                .padding([.leading, .trailing])
 
-            NTDNotesViewSeparator()
+            JSTNotesViewSeparator()
 
             HStack {
                 Text("remind me")
@@ -84,6 +83,6 @@ struct JSTNotesView: View {
 
 struct NotesView_Previews: PreviewProvider {
     static var previews: some View {
-        return JSTNotesView(todo: .constant(JSTTaskModel(id: UUID(), list: JSTTaskModel.ListInfo(id: 1, name: "Preview"))))
+        return JSTNotesView(task: .constant(JSTTaskModel(list: JSTTaskModel.ListInfo(id: 1, name: "Preview"))))
     }
 }

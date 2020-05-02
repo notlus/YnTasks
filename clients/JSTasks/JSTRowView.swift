@@ -1,6 +1,6 @@
 //
-//  NTDRowView.swift
-//  NotTODO
+//  JSTRowView.swift
+//  JSTasks
 //
 //  Created by Jeffrey Sulton on 2/16/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct JSTRowView: View {
-//    @ObservedObject var task = JSTaskModel()
     @State public var taskModel: JSTTaskModel
     @State private var showNotes = false
 
@@ -45,8 +44,8 @@ struct JSTRowView: View {
     }
 }
 
-// struct NTDRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NTDRowView(todo: JSTaskModel(id: UUID(), title: "one", list: ListInfo(id: 1, name: "Work")))
-//    }
-// }
+ struct JSTRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        JSTRowView(taskModel: JSTTaskModel(list: JSTTaskModel.ListInfo(id: 2, name: "rowview")))
+    }
+ }
