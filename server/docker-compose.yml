@@ -28,7 +28,7 @@ x-shared_environment: &shared_environment
 
 services:
   app:
-    image: jstodo-vapor:latest
+    image: jstasks-vapor:latest
     build:
       context: .
     environment:
@@ -39,7 +39,7 @@ services:
       - '8080:80'
     command: ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "80"]
   migrate:
-    image: jstodo-vapor:latest
+    image: jstasks-vapor:latest
     build:
       context: .
     environment:
@@ -50,7 +50,7 @@ services:
     deploy:
       replicas: 0
   revert:
-    image: jstodo-vapor:latest
+    image: jstasks-vapor:latest
     build:
       context: .
     environment:
