@@ -10,10 +10,16 @@ import Foundation
 import SwiftUI
 
 /// Represents a list and its associated tasks.
-public struct JSTList: Codable, Identifiable {
+public final class JSTList: Codable, Identifiable, ObservableObject {
     public var id: Int
     public var name: String
     public var tasks = [JSTTaskModel]()
+
+    init(id: Int, name: String, tasks: [JSTTaskModel] = []) {
+        self.id = id
+        self.name = name
+        self.tasks = tasks
+    }
 }
 
 /// The API class for communicating with the JSTasks backend.
