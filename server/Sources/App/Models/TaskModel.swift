@@ -23,17 +23,21 @@ final class TaskModel: Content, Model {
     @Field(key: "due")
     var dueDate: Date?
 
+    @Field(key: "complete")
+    var complete: Bool
+    
     @Parent(key: "list_id")
     var list: ListModel
 
     init() {}
 
-    init(id: UUID? = nil, title: String, priority: Priority = .none, notes: String? = nil, dueDate: Date? = nil, listID: Int) {
+    init(id: UUID? = nil, title: String, priority: Priority = .none, notes: String? = nil, dueDate: Date? = nil, complete: Bool = false, listID: Int) {
         self.id = id
         self.title = title
         self.priority = priority
         self.notes = notes
         self.dueDate = dueDate
+        self.complete = complete
         self.$list.id = listID
     }
 }

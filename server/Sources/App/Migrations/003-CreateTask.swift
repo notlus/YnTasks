@@ -8,6 +8,7 @@ struct CreateTask: Migration {
             .field("priority", .int, .required)
             .field("notes", .string)
             .field("due", .date)
+            .field("complete", .bool)
             .field("list_id", .int, .references("lists", "id"))
             .create()
     }
