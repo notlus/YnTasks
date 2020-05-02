@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A model describing a task.
 public final class JSTTaskModel: Codable, ObservableObject {
     init(id: UUID = UUID(), list: ListInfo) {
         self.id = id
@@ -20,7 +21,7 @@ public final class JSTTaskModel: Codable, ObservableObject {
         title = try container.decode(String.self, forKey: .title)
         complete = try container.decode(Bool.self, forKey: .complete)
         priority = try container.decode(Priority.self, forKey: .priority)
-        notes = try container.decodeIfPresent(String.self, forKey: .notes)
+        notes = try container.decodeIfPresent(String.self, forKey: .notes) ?? ""
         dueDate = try container.decodeIfPresent(String.self, forKey: .dueDate)
         list = try container.decode(ListInfo.self, forKey: .list)
     }
@@ -49,7 +50,7 @@ public final class JSTTaskModel: Codable, ObservableObject {
     var priority: Priority = .none
 
     @Published
-    var notes: String? = ""
+    var notes: String = ""
 
     @Published
     var dueDate: String?

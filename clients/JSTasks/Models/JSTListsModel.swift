@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// A model of the complete set of lists and their tasks.
+/// A model describing the complete set of lists and their tasks.
 public final class JSTListsModel: Codable, ObservableObject {
     private let api = JSTTasksAPI()
 
