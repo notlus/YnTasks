@@ -66,4 +66,7 @@ Package.resolved
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 
+# Certbot generated files
+data/
+
 # End of https://www.gitignore.io/api/swift,xcode
