@@ -31,7 +31,7 @@ public final class JSTTasksAPI {
     }
 
     func getAllTasks(completionHandler: @escaping ([JSTList]?) -> Void) {
-        let url = URL(string: "http://localhost:8080")!
+        let url = URL(string: "https://notlus.dev/api/lists")!
         let dataTask = session.dataTask(with: url) { data, _, error in
 
             if let error = error {
