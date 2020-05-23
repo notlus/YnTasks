@@ -14,6 +14,9 @@ public final class JSTList: Codable, Identifiable, ObservableObject {
     public var id: Int
     public var name: String
     public var tasks = [JSTTaskModel]()
+    public var size: Int {
+        self.tasks.count
+    }
 
     init(id: Int, name: String, tasks: [JSTTaskModel] = []) {
         self.id = id
