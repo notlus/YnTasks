@@ -19,7 +19,7 @@ struct JSTListRow: View {
                 .frame(width: 20, height: 20, alignment: .center)
 
             Text("\(list.name)")
-                .font(.headline)
+                .font(.subheadline)
 
             Spacer()
 
@@ -47,7 +47,16 @@ struct JSTListsView: View {
                     }
                 }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            Button(action: {
+                self.listModel.lists.append(JSTList(id: 988, name: "New List"))
+
+            }) {
+                Text("+")
+                    .font(.headline)
+                    .padding(.leading, 0)
+                Text("Add List")
+                    .font(.system(.footnote))
+            }
         }
     }
 }

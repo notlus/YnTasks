@@ -13,7 +13,7 @@ public final class JSTListsModel: Codable, ObservableObject {
     private let api = JSTTasksAPI()
 
     @Published
-    private(set) var lists: [JSTList] = []
+    public var lists: [JSTList] = []
 
     @Published
     public var selectedList: JSTList?
