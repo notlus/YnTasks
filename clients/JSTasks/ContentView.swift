@@ -17,10 +17,8 @@ struct ContentView: View {
                 HStack {
                     JSTListsView(listModel: listModel)
                         .listStyle(SidebarListStyle())
-                        .border(Color.red, width: 2)
                 }
             }
-            .border(Color.blue, width: 2)
             .onAppear {
                 self.listModel.fetch()
             }

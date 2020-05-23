@@ -17,7 +17,6 @@ struct JSTTasksView: View {
                 Text(self.list.name)
                     .font(.title)
                     .bold()
-                    .foregroundColor(Color.red)
                     .padding()
 
                 Spacer()

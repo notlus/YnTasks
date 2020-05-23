@@ -62,7 +62,6 @@ struct JSTNotesView: View {
                     Text("At a Location")
                 }
                 .padding()
-                .border(Color.blue)
             }
             .border(Color.green)
 

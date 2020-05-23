@@ -14,7 +14,6 @@ struct JSTListRow: View {
     var body: some View {
         Text("\(list.name)")
             .font(.headline)
-            .border(Color.black, width: 2)
     }
 }
 
@@ -30,7 +29,6 @@ struct JSTListsView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .border(Color.yellow, width: 2)
     }
 }
 
