@@ -18,6 +18,10 @@ jobs:
         cd server
         swift package update
     - name: Build
-      run: swift build -v
+      run: |
+        cd server
+        swift build -v
     - name: Run tests
-      run: swift test -v
+      run: |
+        cd server
+        swift test -v
