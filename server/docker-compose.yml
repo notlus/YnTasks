@@ -36,6 +36,7 @@ services:
       <<: *shared_environment
     depends_on:
       - db
+      - nginx
     expose:
         - "80"
     command: ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "80"]
@@ -58,6 +59,7 @@ services:
       <<: *shared_environment
     depends_on:
       - db
+      - nginx
     command: ["migrate", "--revert", "--yes"]
     deploy:
       replicas: 0
