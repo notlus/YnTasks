@@ -23,7 +23,7 @@ struct JSTNotesViewSeparator: View {
 
 struct JSTNotesView: View {
     var priorities = ["None", "High", "Medium", "Low"]
-    @Binding var task: JSTTaskModel
+    @Binding var task: JSTTaskViewModel
     @State private var remindOnDate = false
     @State private var remindAtLocation = false
     @State private var selectedPriority = 0
@@ -82,6 +82,6 @@ struct JSTNotesView: View {
 
 struct NotesView_Previews: PreviewProvider {
     static var previews: some View {
-        return JSTNotesView(task: .constant(JSTTaskModel(list: JSTTaskModel.ListInfo(id: 1, name: "Preview"))))
+        return JSTNotesView(task: .constant(JSTTaskViewModel(list: JSTTaskViewModel.ListInfo(id: 1, name: "Preview"))))
     }
 }

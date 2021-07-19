@@ -8,8 +8,8 @@
 
 import Foundation
 
-/// A model describing a task.
-public final class JSTTaskModel: Codable, ObservableObject {
+/// A view-model describing a task.
+public final class JSTTaskViewModel: Codable, ObservableObject {
     init(id: UUID = UUID(), list: ListInfo) {
         self.id = id
         self.list = list
@@ -56,7 +56,7 @@ public final class JSTTaskModel: Codable, ObservableObject {
     var dueDate: String?
 }
 
-extension JSTTaskModel {
+extension JSTTaskViewModel {
     struct ListInfo: Codable, Hashable {
         var id: Int = 0
         var name: String? = "Default"

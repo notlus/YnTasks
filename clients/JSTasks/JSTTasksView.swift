@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct JSTTasksView: View {
-    var list: JSTList
+    var list: JSTListModel
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -47,7 +47,7 @@ struct JSTTasksView: View {
 
 struct NTDListView_Previews: PreviewProvider {
     static var previews: some View {
-        let tasks = [JSTTaskModel(list: JSTTaskModel.ListInfo(id: 1, name: "task"))]
-        return JSTTasksView(list: JSTList(id: 1, name: "preview", tasks: tasks))
+        let tasks = [JSTTaskViewModel(list: JSTTaskViewModel.ListInfo(id: 1, name: "task"))]
+        return JSTTasksView(list: JSTListModel(id: 1, name: "preview", tasks: tasks))
     }
 }

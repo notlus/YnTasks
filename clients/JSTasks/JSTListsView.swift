@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct JSTListRow: View {
-    var list: JSTList
+    var list: JSTListModel
 
     var body: some View {
         HStack {
@@ -33,7 +33,7 @@ struct JSTListRow: View {
 }
 
 struct JSTListsView: View {
-    @ObservedObject var listModel: JSTListsModel
+    @ObservedObject var listModel: JSTListsViewModel
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -48,7 +48,7 @@ struct JSTListsView: View {
                 }
             }
             Button(action: {
-                self.listModel.lists.append(JSTList(id: 988, name: "New List"))
+                self.listModel.lists.append(JSTListModel(id: 988, name: "New List"))
 
             }) {
                 Text("+")
@@ -63,6 +63,6 @@ struct JSTListsView: View {
 
 struct JSTListsView_Previews: PreviewProvider {
     static var previews: some View {
-        JSTListsView(listModel: JSTListsModel())
+        JSTListsView(listModel: JSTListsViewModel())
     }
 }

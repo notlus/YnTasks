@@ -8,15 +8,15 @@
 
 import Foundation
 
-/// A model describing the complete set of lists and their tasks.
-public final class JSTListsModel: Codable, ObservableObject {
+/// A view-model describing the complete set of lists and their tasks.
+public final class JSTListsViewModel: Codable, ObservableObject {
     private let api = JSTTasksAPI()
 
     @Published
-    public var lists: [JSTList] = []
+    public var lists: [JSTListModel] = []
 
     @Published
-    public var selectedList: JSTList?
+    public var selectedList: JSTListModel?
 
     enum CodingKeys: CodingKey {
         case lists
@@ -30,7 +30,7 @@ public final class JSTListsModel: Codable, ObservableObject {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        lists = try container.decode([JSTList].self, forKey: .lists)
+        lists = try container.decode([JSTListModel].self, forKey: .lists)
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -40,7 +40,7 @@ public final class JSTListsModel: Codable, ObservableObject {
 
     /// Fetch the full set of tasks
     func fetch() {
-        api.getAllTasks { (lists: [JSTList]?) in
+        api.getAllTasks { (lists: [JSTListModel]?) in
             if let lists = lists {
                 let listDict: [Int: String] = lists.reduce(into: [:]) { result, next in
                     result[next.id] = next.name

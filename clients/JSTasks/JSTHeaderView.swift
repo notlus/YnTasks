@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct JSTHeaderView: View {
-    @ObservedObject var tasks: JSTList
+    @ObservedObject var tasks: JSTListModel
 
     var body: some View {
         HStack {
@@ -22,7 +22,7 @@ struct JSTHeaderView: View {
             VStack {
                 Button("Add") {
                     print("add")
-                    let newTask = JSTTaskModel(list: JSTTaskModel.ListInfo())
+                    let newTask = JSTTaskViewModel(list: JSTTaskViewModel.ListInfo())
                     self.tasks.tasks.append(newTask)
                 }
                 Text("\(tasks.tasks.count)")
@@ -34,6 +34,6 @@ struct JSTHeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        JSTHeaderView(tasks: JSTList(id: 0, name: "HeaderView"))
+        JSTHeaderView(tasks: JSTListModel(id: 0, name: "HeaderView"))
     }
 }

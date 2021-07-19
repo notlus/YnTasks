@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct JSTRowView: View {
-    @State public var taskModel: JSTTaskModel
+    @State public var taskModel: JSTTaskViewModel
     @State private var showNotes = false
 
     var body: some View {
@@ -46,6 +46,6 @@ struct JSTRowView: View {
 
  struct JSTRowView_Previews: PreviewProvider {
     static var previews: some View {
-        JSTRowView(taskModel: JSTTaskModel(list: JSTTaskModel.ListInfo(id: 2, name: "rowview")))
+        JSTRowView(taskModel: JSTTaskViewModel(list: JSTTaskViewModel.ListInfo(id: 2, name: "rowview")))
     }
  }
