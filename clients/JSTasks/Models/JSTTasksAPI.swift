@@ -9,22 +9,6 @@
 import Foundation
 import SwiftUI
 
-/// Represents a list and its associated tasks.
-public final class JSTList: Codable, Identifiable, ObservableObject {
-    public var id: Int
-    public var name: String
-    public var tasks = [JSTTaskModel]()
-    public var size: Int {
-        self.tasks.count
-    }
-
-    init(id: Int, name: String, tasks: [JSTTaskModel] = []) {
-        self.id = id
-        self.name = name
-        self.tasks = tasks
-    }
-}
-
 /// The API class for communicating with the JSTasks backend.
 public final class JSTTasksAPI {
     let session: URLSession
@@ -33,7 +17,7 @@ public final class JSTTasksAPI {
         session = URLSession(configuration: .default)
     }
 
-    func getAllTasks(completionHandler: @escaping ([JSTList]?) -> Void) {
+    func getAllTasks(completionHandler: @escaping ([JSTListModel]?) -> Void) {
         let url = URL(string: "https://notlus.dev/api/lists")!
         let dataTask = session.dataTask(with: url) { data, _, error in
 
@@ -47,7 +31,7 @@ public final class JSTTasksAPI {
             }
 
             let decoder = JSONDecoder()
-            let tasks = try? decoder.decode([JSTList].self, from: data)
+            let tasks = try? decoder.decode([JSTListModel].self, from: data)
 
             completionHandler(tasks)
         }
