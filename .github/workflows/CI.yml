@@ -2,26 +2,45 @@ name: JSTasks
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  build:
-
+  build_macos:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Update Dependencies
-      run: |
-        cd server
-        swift package update
-    - name: Build
-      run: |
-        cd server
-        swift build -v
-    - name: Run tests
-      run: |
-        cd server
-        swift test -v
+      - uses: actions/checkout@v2
+      - name: Update Dependencies
+        run: |
+          cd server
+          swift package update
+      - name: Build
+        run: |
+          cd server
+          swift build -v
+      - name: Run tests
+        run: |
+          cd server
+          swift test -v
+
+  build_ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Image
+        run: |
+          cd server
+          docker-compose build
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Log in to DO Container Registry
+        run: doctl registry login --expiry-seconds 600
+      - name: Tag image
+        run: docker tag jstasks-vapor registry.digitalocean.com/notlus/jstasks-vapor:${{ github.event.inputs.version }}
+      - name: Push image to DO Container Registry
+        run: docker push registry.digitalocean.com/notlus/jstasks-vapor:${{ github.event.inputs.version }}
