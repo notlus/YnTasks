@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "JSTasks",
+    name: "JSTasksServer",
     platforms: [
         .macOS(.v10_15)
     ],
