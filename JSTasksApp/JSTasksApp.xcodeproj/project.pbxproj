@@ -42,6 +42,7 @@
 		37C7B7CF23F67C4F000B0E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37C7B7D123F67C4F000B0E07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37C7B7D223F67C4F000B0E07 /* JSTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JSTasks.entitlements; sourceTree = "<group>"; };
+		37E341A926AD3075008DC8CB /* JSTasks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JSTasks; path = ..; sourceTree = "<group>"; };
 		37F513E2241D7E3700FF3FC8 /* JSTNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTNotesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +72,9 @@
 		37C7B7B923F67C4D000B0E07 = {
 			isa = PBXGroup;
 			children = (
-				37C7B7C423F67C4D000B0E07 /* JSTasks */,
+				37E341A926AD3075008DC8CB /* JSTasks */,
+				37722E4A244041800080C606 /* Models */,
+				37C7B7C423F67C4D000B0E07 /* macOS */,
 				37C7B7C323F67C4D000B0E07 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,10 +87,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		37C7B7C423F67C4D000B0E07 /* JSTasks */ = {
+		37C7B7C423F67C4D000B0E07 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				37722E4A244041800080C606 /* Models */,
 				37C7B7C523F67C4D000B0E07 /* AppDelegate.swift */,
 				37C7B7C723F67C4D000B0E07 /* ContentView.swift */,
 				37110213240E1CFA0056B058 /* JSTHeaderView.swift */,
@@ -101,7 +103,7 @@
 				37C7B7D223F67C4F000B0E07 /* JSTasks.entitlements */,
 				37C7B7CB23F67C4F000B0E07 /* Preview Content */,
 			);
-			path = JSTasks;
+			path = macOS;
 			sourceTree = "<group>";
 		};
 		37C7B7CB23F67C4F000B0E07 /* Preview Content */ = {
@@ -147,7 +149,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 37C7B7BD23F67C4D000B0E07 /* Build configuration list for PBXProject "JSTasks" */;
+			buildConfigurationList = 37C7B7BD23F67C4D000B0E07 /* Build configuration list for PBXProject "JSTasksApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -335,7 +337,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Q3VLQUJKF5;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = JSTasks/Info.plist;
+				INFOPLIST_FILE = macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -357,7 +359,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = Q3VLQUJKF5;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = JSTasks/Info.plist;
+				INFOPLIST_FILE = macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -372,7 +374,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		37C7B7BD23F67C4D000B0E07 /* Build configuration list for PBXProject "JSTasks" */ = {
+		37C7B7BD23F67C4D000B0E07 /* Build configuration list for PBXProject "JSTasksApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37C7B7D323F67C4F000B0E07 /* Debug */,

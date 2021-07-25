@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/jeffrey_sulton/Documents/development/JSTasks/macOS/JSTasks.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
