@@ -65,6 +65,7 @@ services:
       replicas: 0
   db:
     image: postgres
+    container_name: jstasks-db
     volumes:
       - db_data:/var/lib/postgresql/data/pgdata
     environment:
