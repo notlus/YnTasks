@@ -8,18 +8,33 @@
 
 import Foundation
 
-/// Represents a list and its associated tasks.
-public final class JSTListModel: Codable, Identifiable, ObservableObject {
+/// A model for a list .
+///
+/// A list has a name and an array of zero or more tasks.
+public struct JSTListModel: Codable, Identifiable {
+    public var tasks: [JSTTaskModel] = .init()
     public var id: Int
     public var name: String
-    public var tasks = [JSTTaskViewModel]()
     public var size: Int {
-        self.tasks.count
+        tasks.count
     }
 
-    init(id: Int, name: String, tasks: [JSTTaskViewModel] = []) {
+    init(id: Int, name: String, tasks: [JSTTaskModel] = .init()) {
         self.id = id
         self.name = name
         self.tasks = tasks
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        tasks = try container.decode([JSTTaskModel].self, forKey: .tasks)
+    }
+
+    public func encode(to _: Encoder) throws {}
+
+    enum CodingKeys: CodingKey {
+        case id, name, tasks
     }
 }
