@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3711003E240E16CD0056B058 /* JSTListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711003D240E16CD0056B058 /* JSTListsView.swift */; };
-		37110214240E1CFA0056B058 /* JSTHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37110213240E1CFA0056B058 /* JSTHeaderView.swift */; };
 		3760016E24479B72009BCEE5 /* JSTRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B1F623FA35E50095CED9 /* JSTRowView.swift */; };
 		3760016F24479EA4009BCEE5 /* JSTNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F513E2241D7E3700FF3FC8 /* JSTNotesView.swift */; };
 		376131E42446B31500A49C71 /* JSTTasksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376131E22446950400A49C71 /* JSTTasksAPI.swift */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		3711003D240E16CD0056B058 /* JSTListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTListsView.swift; sourceTree = "<group>"; };
-		37110213240E1CFA0056B058 /* JSTHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTHeaderView.swift; sourceTree = "<group>"; };
 		376131E22446950400A49C71 /* JSTTasksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTTasksAPI.swift; sourceTree = "<group>"; };
 		37748BA22414C20300E5FE24 /* JSTListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTListsViewModel.swift; sourceTree = "<group>"; };
 		3781B1F623FA35E50095CED9 /* JSTRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTRowView.swift; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 			children = (
 				37C7B7C523F67C4D000B0E07 /* AppDelegate.swift */,
 				37C7B7C723F67C4D000B0E07 /* ContentView.swift */,
-				37110213240E1CFA0056B058 /* JSTHeaderView.swift */,
 				3711003D240E16CD0056B058 /* JSTListsView.swift */,
 				3781B1F823FA361B0095CED9 /* JSTTasksView.swift */,
 				3781B1F623FA35E50095CED9 /* JSTRowView.swift */,
@@ -186,7 +183,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37110214240E1CFA0056B058 /* JSTHeaderView.swift in Sources */,
 				3781B1FD23FA76430095CED9 /* JSTTaskViewModel.swift in Sources */,
 				3760016F24479EA4009BCEE5 /* JSTNotesView.swift in Sources */,
 				37B192CC26A51E8F001AECFE /* JSTListModel.swift in Sources */,
