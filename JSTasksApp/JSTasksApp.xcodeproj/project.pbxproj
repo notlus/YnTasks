@@ -13,7 +13,7 @@
 		376131E42446B31500A49C71 /* JSTTasksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376131E22446950400A49C71 /* JSTTasksAPI.swift */; };
 		37748BA32414C20300E5FE24 /* JSTListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37748BA22414C20300E5FE24 /* JSTListsViewModel.swift */; };
 		3781B1F923FA361B0095CED9 /* JSTTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B1F823FA361B0095CED9 /* JSTTasksView.swift */; };
-		3781B1FD23FA76430095CED9 /* JSTTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B1FC23FA76430095CED9 /* JSTTaskViewModel.swift */; };
+		3781B1FD23FA76430095CED9 /* JSTTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B1FC23FA76430095CED9 /* JSTTaskModel.swift */; };
 		3781B3A823FB521C0095CED9 /* listsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3781B3A723FB521C0095CED9 /* listsData.json */; };
 		37B192CC26A51E8F001AECFE /* JSTListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B192CB26A51E8F001AECFE /* JSTListModel.swift */; };
 		37C7B7C623F67C4D000B0E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C7B7C523F67C4D000B0E07 /* AppDelegate.swift */; };
@@ -29,7 +29,7 @@
 		37748BA22414C20300E5FE24 /* JSTListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTListsViewModel.swift; sourceTree = "<group>"; };
 		3781B1F623FA35E50095CED9 /* JSTRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTRowView.swift; sourceTree = "<group>"; };
 		3781B1F823FA361B0095CED9 /* JSTTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTTasksView.swift; sourceTree = "<group>"; };
-		3781B1FC23FA76430095CED9 /* JSTTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTTaskViewModel.swift; sourceTree = "<group>"; };
+		3781B1FC23FA76430095CED9 /* JSTTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTTaskModel.swift; sourceTree = "<group>"; };
 		3781B3A723FB521C0095CED9 /* listsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listsData.json; sourceTree = "<group>"; };
 		37B192CB26A51E8F001AECFE /* JSTListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTListModel.swift; sourceTree = "<group>"; };
 		37C7B7C223F67C4D000B0E07 /* JSTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,7 +60,7 @@
 			children = (
 				376131E22446950400A49C71 /* JSTTasksAPI.swift */,
 				37B192CB26A51E8F001AECFE /* JSTListModel.swift */,
-				3781B1FC23FA76430095CED9 /* JSTTaskViewModel.swift */,
+				3781B1FC23FA76430095CED9 /* JSTTaskModel.swift */,
 				37748BA22414C20300E5FE24 /* JSTListsViewModel.swift */,
 				3781B3A723FB521C0095CED9 /* listsData.json */,
 			);
@@ -183,7 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3781B1FD23FA76430095CED9 /* JSTTaskViewModel.swift in Sources */,
+				3781B1FD23FA76430095CED9 /* JSTTaskModel.swift in Sources */,
 				3760016F24479EA4009BCEE5 /* JSTNotesView.swift in Sources */,
 				37B192CC26A51E8F001AECFE /* JSTListModel.swift in Sources */,
 				3781B1F923FA361B0095CED9 /* JSTTasksView.swift in Sources */,

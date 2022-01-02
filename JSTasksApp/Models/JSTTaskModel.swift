@@ -8,8 +8,10 @@
 
 import Foundation
 
-/// A view-model describing a task.
-public final class JSTTaskViewModel: Codable, ObservableObject {
+/// A model for a task .
+///
+/// A task belongs to a single list.
+public struct JSTTaskModel: Codable {
     init(id: UUID = UUID(), list: ListInfo) {
         self.id = id
         self.list = list
@@ -39,24 +41,15 @@ public final class JSTTaskViewModel: Codable, ObservableObject {
 
     var id: UUID
     var list: ListInfo
-
-    @Published
     var title: String = ""
-
-    @Published
     var complete: Bool = false
-
-    @Published
+    var showNotes: Bool = false
     var priority: Priority = .none
-
-    @Published
     var notes: String = ""
-
-    @Published
     var dueDate: String?
 }
 
-extension JSTTaskViewModel {
+extension JSTTaskModel {
     struct ListInfo: Codable, Hashable {
         var id: Int = 0
         var name: String? = "Default"
