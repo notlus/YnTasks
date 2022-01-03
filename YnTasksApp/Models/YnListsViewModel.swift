@@ -1,6 +1,6 @@
 //
 //  JSTListsModel.swift
-//  JSTasks
+//  YnTasks
 //
 //  Created by Jeffrey Sulton on 3/7/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -9,14 +9,14 @@
 import Foundation
 
 /// A view-model describing the complete set of lists and their tasks.
-public final class JSTListsViewModel: Codable, ObservableObject {
-    private let api = JSTTasksAPI()
+public final class YnListsViewModel: Codable, ObservableObject {
+    private let api = YnTasksAPI()
 
     @Published
-    public var lists: [JSTListModel] = []
+    public var lists: [YnListModel] = []
 
     @Published
-    public var selectedList: JSTListModel?
+    public var selectedList: YnListModel?
 
     enum CodingKeys: CodingKey {
         case lists
@@ -30,7 +30,7 @@ public final class JSTListsViewModel: Codable, ObservableObject {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        lists = try container.decode([JSTListModel].self, forKey: .lists)
+        lists = try container.decode([YnListModel].self, forKey: .lists)
     }
 
     public func encode(to encoder: Encoder) throws {
@@ -40,7 +40,7 @@ public final class JSTListsViewModel: Codable, ObservableObject {
 
     /// Fetch the full set of tasks
     func fetch() {
-        api.getAllTasks { (lists: [JSTListModel]?) in
+        api.getAllTasks { (lists: [YnListModel]?) in
             if let lists = lists {
                 let listDict: [Int: String] = lists.reduce(into: [:]) { result, next in
                     result[next.id] = next.name

@@ -1,11 +1,11 @@
-# JSTasks Design
+# YnTasks Design
 
-**JSTasks** is an implementation of a simple TODO list application. The application consists of a backend server, a [PostgreSQL](https://www.postgresql.org/) database and various clients.
+**YnTasks** is an implementation of a simple TODO list application. The application consists of a backend server, a [PostgreSQL](https://www.postgresql.org/) database and various clients.
 
 ## High Level Architecture
 
 ```puml
-@startuml JSTasks Components
+@startuml YnTasks Components
 skinparam monochrome true
 title <b>Application Components
 frame Clients {
@@ -14,9 +14,9 @@ component "iOS\nClient"
 component "Web\nClient"
 }
 cloud Azure {
-component "JSTasks App"
-database JSTasks [
-<b>JSTasks DB
+component "YnTasks App"
+database YnTasks [
+<b>YnTasks DB
 ---
 - lists table
 ---
@@ -31,8 +31,8 @@ database JSTasks [
 skinparam monochrome true
 title <b>Client/Backend Interaction
 Client -> App: get api/lists
-App -> "JSTasks DB": Query DB
-"JSTasks DB" ->> App: [ListModel]
+App -> "YnTasks DB": Query DB
+"YnTasks DB" ->> App: [ListModel]
 App ->> Client: [ListModel JSON]
 @enduml
 ```
@@ -82,7 +82,7 @@ A task is a single thing to be done. Tasks can belong to a single list.
 
 ### Database
 
-A PostgreSQL database, named `jstasks` is used to store all of the data for the application.related to  and contains two tables, `lists` and `tasks`.
+A PostgreSQL database, named `YnTasks` is used to store all of the data for the application.related to  and contains two tables, `lists` and `tasks`.
 
 #### Tables
 

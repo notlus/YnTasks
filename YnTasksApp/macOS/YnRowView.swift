@@ -1,6 +1,6 @@
 //
 //  JSTRowView.swift
-//  JSTasks
+//  YnTasks
 //
 //  Created by Jeffrey Sulton on 2/16/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -22,7 +22,7 @@ class YnRowViewModel: ObservableObject {
     var notes: String = ""
 }
 
-struct JSTRowView: View {
+struct YnRowView: View {
     @ObservedObject var viewModel: YnRowViewModel
 
     var body: some View {
@@ -57,7 +57,7 @@ struct JSTRowView: View {
             .popover(
                 isPresented: $viewModel.showNotes,
                 arrowEdge: .trailing) {
-                    JSTNotesView(
+                    YnNotesView(
                         viewModel: YnNotesViewModel(
                             title: viewModel.title,
                             notes: viewModel.notes))
@@ -66,8 +66,8 @@ struct JSTRowView: View {
     }
 }
 
-struct JSTRowView_Previews: PreviewProvider {
+struct YnRowView_Previews: PreviewProvider {
     static var previews: some View {
-        JSTRowView(viewModel: YnRowViewModel())
+        YnRowView(viewModel: YnRowViewModel())
     }
 }

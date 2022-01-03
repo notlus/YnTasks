@@ -1,6 +1,6 @@
 //
-//  JSTTaskModel.swift
-//  JSTasks
+//  YnTaskModel.swift
+//  YnTasks
 //
 //  Created by Jeffrey Sulton on 4/15/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -11,7 +11,7 @@ import Foundation
 /// A model for a task .
 ///
 /// A task belongs to a single list.
-public struct JSTTaskModel: Codable {
+public struct YnTaskModel: Codable {
     init(id: UUID = UUID(), list: ListInfo) {
         self.id = id
         self.list = list
@@ -49,7 +49,7 @@ public struct JSTTaskModel: Codable {
     var dueDate: String?
 }
 
-extension JSTTaskModel {
+extension YnTaskModel {
     struct ListInfo: Codable, Hashable {
         var id: Int = 0
         var name: String? = "Default"

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "37C7B7C123F67C4D000B0E07"
-               BuildableName = "JSTasks.app"
-               BlueprintName = "JSTasks"
-               ReferencedContainer = "container:JSTasksApp.xcodeproj">
+               BuildableName = "YnTasks.app"
+               BlueprintName = "YnTasks"
+               ReferencedContainer = "container:YnTasksApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37C7B7C123F67C4D000B0E07"
-            BuildableName = "JSTasks.app"
-            BlueprintName = "JSTasks"
-            ReferencedContainer = "container:JSTasksApp.xcodeproj">
+            BuildableName = "YnTasks.app"
+            BlueprintName = "YnTasks"
+            ReferencedContainer = "container:YnTasksApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37C7B7C123F67C4D000B0E07"
-            BuildableName = "JSTasks.app"
-            BlueprintName = "JSTasks"
-            ReferencedContainer = "container:JSTasksApp.xcodeproj">
+            BuildableName = "YnTasks.app"
+            BlueprintName = "YnTasks"
+            ReferencedContainer = "container:YnTasksApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
