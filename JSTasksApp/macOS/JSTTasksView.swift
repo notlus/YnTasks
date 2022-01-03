@@ -8,13 +8,25 @@
 
 import SwiftUI
 
+class YnTasksViewModel: ObservableObject {
+    let listID: Int
+    @Published var listName: String
+    @Published var tasks: [JSTTaskModel]
+
+    init(listID: Int, listName: String, tasks: [JSTTaskModel]) {
+        self.listID = listID
+        self.listName = listName
+        self.tasks = tasks
+    }
+}
+
 struct JSTTasksView: View {
-    var list: JSTListModel
+    @ObservedObject var viewModel: YnTasksViewModel
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(self.list.name)
+                Text(self.viewModel.listName)
                     .font(.title)
                     .bold()
                     .padding()
@@ -22,22 +34,25 @@ struct JSTTasksView: View {
                 Spacer()
 
                 VStack {
-                    Button("+") {
-                        // TODO: Add new task
+                    Button {
                         print("add")
-//                        todos.append(Todo(id: Int.random(in: 100..<1000), task: "New Task"))
+                        viewModel.tasks.append(
+                            JSTTaskModel(
+                                id: UUID(),
+                                list: .init(id: viewModel.listID, name: viewModel.listName)))
+                    } label: {
+                        Image(systemName: "plus")
                     }
                     .font(.headline)
 
-                    Text("\(list.tasks.count)")
+                    Text("\(viewModel.tasks.count)")
                 }
                 .padding()
             }
 
-//            List(selection: $selectedRow) {
             List {
-                ForEach(list.tasks, id: \.id) { task in
-                    JSTRowView(taskModel: task)
+                ForEach(viewModel.tasks, id: \.id) { _ in
+                    JSTRowView(viewModel: YnRowViewModel())
                 }
             }
             .listStyle(PlainListStyle())
@@ -47,7 +62,8 @@ struct JSTTasksView: View {
 
 struct NTDListView_Previews: PreviewProvider {
     static var previews: some View {
-        let tasks = [JSTTaskViewModel(list: JSTTaskViewModel.ListInfo(id: 1, name: "task"))]
-        return JSTTasksView(list: JSTListModel(id: 1, name: "preview", tasks: tasks))
+        let tasks = [JSTTaskModel(list: JSTTaskModel.ListInfo(id: 1, name: "task"))]
+        let viewModel = YnTasksViewModel(listID: 0, listName: "Preview List", tasks: tasks)
+        return JSTTasksView(viewModel: viewModel)
     }
 }
