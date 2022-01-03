@@ -8,44 +8,66 @@
 
 import SwiftUI
 
+class YnRowViewModel: ObservableObject {
+    @Published
+    var title: String = ""
+
+    @Published
+    var complete: Bool = false
+    
+    @Published
+    var showNotes: Bool = false
+    
+    @Published
+    var notes: String = ""
+}
+
 struct JSTRowView: View {
-    @State public var taskModel: JSTTaskViewModel
-    @State private var showNotes = false
+    @ObservedObject var viewModel: YnRowViewModel
 
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 0) {
                 HStack {
-                    Toggle(isOn: $taskModel.complete) {
-//                        if !todo.complete {
-                        TextField("What do you want to do?", text: $taskModel.title, onEditingChanged: { change in
-                            print("change: \(change)")
-                        })
-                            .font(.subheadline)
+                    Button {
+                        viewModel.complete.toggle()
+                    } label: {
+                        Image(systemName: viewModel.complete ? "checkmark.square" : "square")
                     }
+                    .buttonStyle(.plain)
+
+                    TextField("What do you want to do?", text: $viewModel.title, onEditingChanged: { change in
+                        print("change: \(change)")
+                    })
+                    .font(.subheadline)
 
                     Spacer()
 
                     Button(action: {
-                        self.showNotes.toggle()
+                        viewModel.showNotes.toggle()
                     }, label: {
                         Image("info")
                             .resizable()
                     })
-                        .frame(width: 20, height: 20)
-                        .buttonStyle(PlainButtonStyle())
-                        .padding([.leading, .trailing])
+                    .frame(width: 20, height: 20)
+                    .buttonStyle(PlainButtonStyle())
+                    .padding([.leading, .trailing])
                 }
             }
-//            .popover(isPresented: self.$showNotes, arrowEdge: .trailing) {
-//                NotesView(todo: self.$todo)
-//            }
+            .popover(
+                isPresented: $viewModel.showNotes,
+                arrowEdge: .trailing) {
+                    JSTNotesView(
+                        viewModel: YnNotesViewModel(
+                            title: viewModel.title,
+                            notes: viewModel.notes))
+            }
         }
     }
 }
 
- struct JSTRowView_Previews: PreviewProvider {
+struct JSTRowView_Previews: PreviewProvider {
     static var previews: some View {
-        JSTRowView(taskModel: JSTTaskViewModel(list: JSTTaskViewModel.ListInfo(id: 2, name: "rowview")))
+        JSTRowView(viewModel: YnRowViewModel())
     }
- }
+}
