@@ -8,6 +8,19 @@
 
 import SwiftUI
 
+class YnNotesViewModel: ObservableObject {
+    @Published
+    var title: String
+
+    @Published
+    var notes: String
+
+    init(title: String, notes: String) {
+        self.title = title
+        self.notes = notes
+    }
+}
+
 struct JSTNotesViewSeparator: View {
     var body: some View {
         Path { path in
@@ -23,23 +36,23 @@ struct JSTNotesViewSeparator: View {
 
 struct JSTNotesView: View {
     var priorities = ["None", "High", "Medium", "Low"]
-    @Binding var task: JSTTaskViewModel
+    @ObservedObject var viewModel: YnNotesViewModel
     @State private var remindOnDate = false
     @State private var remindAtLocation = false
     @State private var selectedPriority = 0
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(task.title)
+            Text(viewModel.title)
                 .font(.headline)
                 .padding()
 
-            TextField("Notes", text: self.$task.notes, onCommit: {
+            TextField("Notes", text: self.$viewModel.notes, onCommit: {
                 print("onCommit")
             })
-                .lineLimit(10)
-                .multilineTextAlignment(TextAlignment.leading)
-                .padding([.leading, .trailing])
+            .lineLimit(10)
+            .multilineTextAlignment(TextAlignment.leading)
+            .padding([.leading, .trailing])
 
             JSTNotesViewSeparator()
 
@@ -67,7 +80,7 @@ struct JSTNotesView: View {
 
             HStack {
                 Picker(selection: $selectedPriority, label: Text("priority").frame(minWidth: 65)) {
-                    ForEach(0..<self.priorities.count) {
+                    ForEach(0 ..< self.priorities.count) {
                         Text(self.priorities[$0])
                     }
                 }
@@ -82,6 +95,9 @@ struct JSTNotesView: View {
 
 struct NotesView_Previews: PreviewProvider {
     static var previews: some View {
-        return JSTNotesView(task: .constant(JSTTaskViewModel(list: JSTTaskViewModel.ListInfo(id: 1, name: "Preview"))))
+        JSTNotesView(
+            viewModel: YnNotesViewModel(
+                title: "Preview Title",
+                notes: "Preview Notes"))
     }
 }
