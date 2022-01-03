@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  JSTasks
+//  YnTasks
 //
 //  Created by Jeffrey Sulton on 2/13/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var listModel = JSTListsViewModel()
+    @ObservedObject var listModel = YnListsViewModel()
 
     var body: some View {
         VStack(alignment: .leading) {
             NavigationView {
                 HStack {
-                    JSTListsView(listModel: listModel)
+                    YnListsView(listModel: listModel)
                         .listStyle(SidebarListStyle())
                 }
             }

@@ -1,6 +1,6 @@
 //
-//  JSTTasksAPI.swift
-//  JSTasks
+//  YnTasksAPI.swift
+//  YnTasks
 //
 //  Created by Jeffrey Sulton on 4/14/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -9,15 +9,15 @@
 import Foundation
 import SwiftUI
 
-/// The API class for communicating with the JSTasks backend.
-public final class JSTTasksAPI {
+/// The API class for communicating with the YnTasks backend.
+public final class YnTasksAPI {
     let session: URLSession
 
     init() {
         session = URLSession(configuration: .default)
     }
 
-    func getAllTasks(completionHandler: @escaping ([JSTListModel]?) -> Void) {
+    func getAllTasks(completionHandler: @escaping ([YnListModel]?) -> Void) {
         let url = URL(string: "https://notlus.dev/api/lists")!
         let dataTask = session.dataTask(with: url) { data, _, error in
 
@@ -31,7 +31,7 @@ public final class JSTTasksAPI {
             }
 
             let decoder = JSONDecoder()
-            let tasks = try? decoder.decode([JSTListModel].self, from: data)
+            let tasks = try? decoder.decode([YnListModel].self, from: data)
 
             completionHandler(tasks)
         }

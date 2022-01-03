@@ -1,6 +1,6 @@
 //
 //  JSTTasksView.swift
-//  JSTasks
+//  YnTasks
 //
 //  Created by Jeffrey Sulton on 2/16/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -11,16 +11,16 @@ import SwiftUI
 class YnTasksViewModel: ObservableObject {
     let listID: Int
     @Published var listName: String
-    @Published var tasks: [JSTTaskModel]
+    @Published var tasks: [YnTaskModel]
 
-    init(listID: Int, listName: String, tasks: [JSTTaskModel]) {
+    init(listID: Int, listName: String, tasks: [YnTaskModel]) {
         self.listID = listID
         self.listName = listName
         self.tasks = tasks
     }
 }
 
-struct JSTTasksView: View {
+struct YnTasksView: View {
     @ObservedObject var viewModel: YnTasksViewModel
 
     var body: some View {
@@ -37,7 +37,7 @@ struct JSTTasksView: View {
                     Button {
                         print("add")
                         viewModel.tasks.append(
-                            JSTTaskModel(
+                            YnTaskModel(
                                 id: UUID(),
                                 list: .init(id: viewModel.listID, name: viewModel.listName)))
                     } label: {
@@ -52,7 +52,7 @@ struct JSTTasksView: View {
 
             List {
                 ForEach(viewModel.tasks, id: \.id) { _ in
-                    JSTRowView(viewModel: YnRowViewModel())
+                    YnRowView(viewModel: YnRowViewModel())
                 }
             }
             .listStyle(PlainListStyle())
@@ -60,10 +60,10 @@ struct JSTTasksView: View {
     }
 }
 
-struct NTDListView_Previews: PreviewProvider {
+struct YnTasksView_Previews: PreviewProvider {
     static var previews: some View {
-        let tasks = [JSTTaskModel(list: JSTTaskModel.ListInfo(id: 1, name: "task"))]
+        let tasks = [YnTaskModel(list: YnTaskModel.ListInfo(id: 1, name: "task"))]
         let viewModel = YnTasksViewModel(listID: 0, listName: "Preview List", tasks: tasks)
-        return JSTTasksView(viewModel: viewModel)
+        return YnTasksView(viewModel: viewModel)
     }
 }

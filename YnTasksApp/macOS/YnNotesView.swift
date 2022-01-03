@@ -1,6 +1,6 @@
 //
 //  JSTNotesView.swift
-//  JSTasks
+//  YnTasks
 //
 //  Created by Jeffrey Sulton on 3/14/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -21,7 +21,7 @@ class YnNotesViewModel: ObservableObject {
     }
 }
 
-struct JSTNotesViewSeparator: View {
+struct YnNotesViewSeparator: View {
     var body: some View {
         Path { path in
             path.move(to: CGPoint(x: 50, y: 0))
@@ -34,7 +34,7 @@ struct JSTNotesViewSeparator: View {
     }
 }
 
-struct JSTNotesView: View {
+struct YnNotesView: View {
     var priorities = ["None", "High", "Medium", "Low"]
     @ObservedObject var viewModel: YnNotesViewModel
     @State private var remindOnDate = false
@@ -54,7 +54,7 @@ struct JSTNotesView: View {
             .multilineTextAlignment(TextAlignment.leading)
             .padding([.leading, .trailing])
 
-            JSTNotesViewSeparator()
+            YnNotesViewSeparator()
 
             HStack {
                 Text("remind me")
@@ -93,9 +93,9 @@ struct JSTNotesView: View {
     }
 }
 
-struct NotesView_Previews: PreviewProvider {
+struct YnNotesView_Previews: PreviewProvider {
     static var previews: some View {
-        JSTNotesView(
+        YnNotesView(
             viewModel: YnNotesViewModel(
                 title: "Preview Title",
                 notes: "Preview Notes"))

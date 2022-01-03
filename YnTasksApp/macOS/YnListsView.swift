@@ -1,6 +1,6 @@
 //
 //  JSTListsView.swift
-//  JSTasks
+//  YnTasks
 //
 //  Created by Jeffrey Sulton on 3/2/20.
 //  Copyright © 2020 Jeffrey Sulton. All rights reserved.
@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct JSTListRow: View {
-    var list: JSTListModel
+    var list: YnListModel
 
     var body: some View {
         HStack {
@@ -32,8 +32,8 @@ struct JSTListRow: View {
     }
 }
 
-struct JSTListsView: View {
-    @ObservedObject var listModel: JSTListsViewModel
+struct YnListsView: View {
+    @ObservedObject var listModel: YnListsViewModel
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -42,13 +42,13 @@ struct JSTListsView: View {
                 .padding(.top, 10)
             List {
                 ForEach(listModel.lists, id: \.id) { list in
-                    NavigationLink(destination: JSTTasksView(viewModel: YnTasksViewModel(listID: list.id, listName: list.name, tasks: list.tasks))) {
+                    NavigationLink(destination: YnTasksView(viewModel: YnTasksViewModel(listID: list.id, listName: list.name, tasks: list.tasks))) {
                         JSTListRow(list: list)
                     }
                 }
             }
             Button(action: {
-                self.listModel.lists.append(JSTListModel(id: 988, name: "New List"))
+                self.listModel.lists.append(YnListModel(id: 988, name: "New List"))
 
             }) {
                 Text("+")
@@ -61,8 +61,8 @@ struct JSTListsView: View {
     }
 }
 
-struct JSTListsView_Previews: PreviewProvider {
+struct YnListsView_Previews: PreviewProvider {
     static var previews: some View {
-        JSTListsView(listModel: JSTListsViewModel())
+        YnListsView(listModel: YnListsViewModel())
     }
 }
