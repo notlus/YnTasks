@@ -42,7 +42,7 @@ struct JSTListsView: View {
                 .padding(.top, 10)
             List {
                 ForEach(listModel.lists, id: \.id) { list in
-                    NavigationLink(destination: JSTTasksView(list: list)) {
+                    NavigationLink(destination: JSTTasksView(viewModel: YnTasksViewModel(listID: list.id, listName: list.name, tasks: list.tasks))) {
                         JSTListRow(list: list)
                     }
                 }
