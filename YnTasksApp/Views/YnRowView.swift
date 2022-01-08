@@ -3,7 +3,7 @@
 //  YnTasks
 //
 //  Created by Jeffrey Sulton on 2/16/20.
-//  Copyright © 2020 Jeffrey Sulton. All rights reserved.
+//  Copyright © 2022 Jeffrey Sulton. All rights reserved.
 //
 
 import SwiftUI
@@ -14,16 +14,17 @@ class YnRowViewModel: ObservableObject {
 
     @Published
     var complete: Bool = false
-    
+
     @Published
     var showNotes: Bool = false
-    
+
     @Published
     var notes: String = ""
 }
 
 struct YnRowView: View {
     @ObservedObject var viewModel: YnRowViewModel
+    @State var isHovered = false
 
     var body: some View {
         HStack {
@@ -32,7 +33,10 @@ struct YnRowView: View {
                     Button {
                         viewModel.complete.toggle()
                     } label: {
-                        Image(systemName: viewModel.complete ? "checkmark.square" : "square")
+                        Image(
+                            systemName: viewModel.complete ? "circle.circle.fill" : "circle")
+                            .font(.system(size: 18.0))
+                            .foregroundColor(viewModel.complete ? .blue : .gray)
                     }
                     .buttonStyle(.plain)
 
@@ -43,16 +47,23 @@ struct YnRowView: View {
 
                     Spacer()
 
-                    Button(action: {
-                        viewModel.showNotes.toggle()
-                    }, label: {
-                        Image("info")
-                            .resizable()
-                    })
-                    .frame(width: 20, height: 20)
-                    .buttonStyle(PlainButtonStyle())
-                    .padding([.leading, .trailing])
+                    if isHovered {
+                        Button(action: {
+                            viewModel.showNotes.toggle()
+                        }, label: {
+                            Image(
+                                systemName: "info.circle")
+                                .font(.system(size: 14.0))
+                                .foregroundColor(.blue)
+                        })
+                        .frame(width: 20, height: 20)
+                        .buttonStyle(PlainButtonStyle())
+                        .padding([.leading, .trailing])
+                    }
                 }
+            }
+            .onHover { hovered in
+                isHovered = hovered
             }
             .popover(
                 isPresented: $viewModel.showNotes,
@@ -69,5 +80,7 @@ struct YnRowView: View {
 struct YnRowView_Previews: PreviewProvider {
     static var previews: some View {
         YnRowView(viewModel: YnRowViewModel())
+
+        YnRowView(viewModel: YnRowViewModel(), isHovered: true)
     }
 }
