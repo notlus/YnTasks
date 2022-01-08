@@ -19,7 +19,7 @@ public struct YnListModel: Codable, Identifiable {
         tasks.count
     }
 
-    init(id: Int, name: String, tasks: [YnTaskModel] = .init()) {
+    public init(id: Int, name: String, tasks: [YnTaskModel] = .init()) {
         self.id = id
         self.name = name
         self.tasks = tasks

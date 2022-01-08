@@ -6,6 +6,10 @@ let package = Package(
     platforms: [
         .macOS(.v10_15)
     ],
+    products: [
+        .library(name: "App", targets: ["App"]),
+        .library(name: "YnShared", targets: ["YnShared"])
+    ],
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.5.0"),
@@ -16,8 +20,10 @@ let package = Package(
         .target(name: "App", dependencies: [
             .product(name: "Fluent", package: "fluent"),
             .product(name: "FluentPostgresDriver", package: "fluent-postgres-driver"),
-            .product(name: "Vapor", package: "vapor")
+            .product(name: "Vapor", package: "vapor"),
+            "YnShared"
         ]),
+        .target(name: "YnShared"),
         .executableTarget(name: "Run", dependencies: ["App"]),
         .testTarget(name: "AppTests", dependencies: [
             .target(name: "App"),

@@ -12,7 +12,7 @@ import Foundation
 ///
 /// A task belongs to a single list.
 public struct YnTaskModel: Codable {
-    init(id: UUID = UUID(), list: ListInfo) {
+    public init(id: UUID = UUID(), list: ListInfo) {
         self.id = id
         self.list = list
     }
@@ -39,8 +39,8 @@ public struct YnTaskModel: Codable {
         try container.encode(list, forKey: .list)
     }
 
-    var id: UUID
-    var list: ListInfo
+    public var id: UUID
+    public var list: ListInfo
     var title: String = ""
     var complete: Bool = false
     var showNotes: Bool = false
@@ -50,9 +50,14 @@ public struct YnTaskModel: Codable {
 }
 
 extension YnTaskModel {
-    struct ListInfo: Codable, Hashable {
-        var id: Int = 0
-        var name: String? = "Default"
+    public struct ListInfo: Codable, Hashable {
+        public var id: Int = 0
+        public var name: String? = "Default"
+        
+        public init(id: Int, name: String?) {
+            self.id = id
+            self.name = name
+        }
     }
 
     enum CodingKeys: CodingKey {
