@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import YnShared
 
 struct JSTListRow: View {
     var list: YnListModel

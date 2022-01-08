@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import YnShared
 
 class YnTasksViewModel: ObservableObject {
     let listID: Int
