@@ -1,27 +1,37 @@
 import Fluent
 import Vapor
+import YnShared
 
 /// Controller to manage TODO lists
 struct ListsController {
-    /// Get all TODO lists and their tasks
-    func getAll(req: Request) -> EventLoopFuture<[ListModel]> {
-        return ListModel.query(on: req.db).with(\.$tasks).all()
+    /// Get all `YnListModel`s and their tasks
+    func getAll(req: Request) -> EventLoopFuture<[YnListModel]> {
+        return ListModel
+            .query(on: req.db)
+            .with(\.$tasks)
+            .all()
+            .flatMapThrowing {
+                $0.map { YnListModel(listModel: $0) }
+            }
     }
 
-    /// Get a single TODO list, and its tasks
-    func get(req: Request) -> EventLoopFuture<[TaskModel]> {
+    /// Get the `YnTaskModel`s for the specified `YnListModel`
+    func get(req: Request) -> EventLoopFuture<[YnTaskModel]> {
         return ListModel.find(req.parameters.get("listID"), on: req.db)
             .unwrap(or: Abort(.notFound))
             .flatMap {
                 $0.$tasks
                     .query(on: req.db)
                     .all()
+                    .flatMapThrowing {
+                        $0.map { YnTaskModel(taskModel: $0) }
+                    }
             }
     }
 
-    /// Create a new TODO list with an empty task list
-    func create(req: Request) throws -> EventLoopFuture<ListModel> {
+    /// Create a new `YnListModel`
+    func create(req: Request) throws -> EventLoopFuture<YnListModel> {
         let newList = try req.content.decode(ListModel.self)
-        return newList.save(on: req.db).map { newList }
+        return newList.save(on: req.db).map { YnListModel(listModel: newList) }
     }
 }

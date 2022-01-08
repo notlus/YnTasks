@@ -1,5 +1,6 @@
 import Fluent
 import Vapor
+import YnShared
 
 final class TaskModel: Content, Model {
     static let schema = "tasks"
@@ -25,7 +26,7 @@ final class TaskModel: Content, Model {
 
     @Field(key: "complete")
     var complete: Bool
-    
+
     @Parent(key: "list_id")
     var list: ListModel
 
@@ -38,6 +39,18 @@ final class TaskModel: Content, Model {
         self.notes = notes
         self.dueDate = dueDate
         self.complete = complete
-        self.$list.id = listID
+        $list.id = listID
+    }
+}
+
+extension YnTaskModel: Content {}
+
+extension YnTaskModel {
+    init(taskModel: TaskModel) {
+        self.init(
+            id: taskModel.id!,
+            list: YnTaskModel.ListInfo(
+                id: taskModel.list.id!,
+                name: taskModel.list.name))
     }
 }
