@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import YnShared
 
 /// The API class for communicating with the YnTasks backend.
 public final class YnTasksAPI {
