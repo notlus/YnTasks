@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import YnShared
 
 /// A view-model describing the complete set of lists and their tasks.
 public final class YnListsViewModel: Codable, ObservableObject {
