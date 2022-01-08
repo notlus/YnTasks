@@ -3,19 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370B8C462783DBAD00B06553 /* YnShared in Frameworks */ = {isa = PBXBuildFile; productRef = 370B8C452783DBAD00B06553 /* YnShared */; };
+		370B8C482783DBB500B06553 /* YnShared in Frameworks */ = {isa = PBXBuildFile; productRef = 370B8C472783DBB500B06553 /* YnShared */; };
+		370B8C4A2783E0AD00B06553 /* YnListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B8C492783E0AD00B06553 /* YnListsViewModel.swift */; };
 		3711003E240E16CD0056B058 /* YnListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711003D240E16CD0056B058 /* YnListsView.swift */; };
+		372F501D2783842B006F08E6 /* YnTasks_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F501C2783842B006F08E6 /* YnTasks_iOSApp.swift */; };
+		372F501F2783842B006F08E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F501E2783842B006F08E6 /* ContentView.swift */; };
+		372F50212783842C006F08E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372F50202783842C006F08E6 /* Assets.xcassets */; };
+		372F50242783842C006F08E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372F50232783842C006F08E6 /* Preview Assets.xcassets */; };
+		372F502E2783842D006F08E6 /* YnTasks_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F502D2783842D006F08E6 /* YnTasks_iOSTests.swift */; };
+		372F5045278384E6006F08E6 /* YnTasksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376131E22446950400A49C71 /* YnTasksAPI.swift */; };
+		372F504827838766006F08E6 /* YnListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711003D240E16CD0056B058 /* YnListsView.swift */; };
+		372F504927838774006F08E6 /* YnTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B1F823FA361B0095CED9 /* YnTasksView.swift */; };
+		372F504A2783877F006F08E6 /* YnRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B1F623FA35E50095CED9 /* YnRowView.swift */; };
+		372F504B2783878F006F08E6 /* YnNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F513E2241D7E3700FF3FC8 /* YnNotesView.swift */; };
 		3760016E24479B72009BCEE5 /* YnRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B1F623FA35E50095CED9 /* YnRowView.swift */; };
 		3760016F24479EA4009BCEE5 /* YnNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F513E2241D7E3700FF3FC8 /* YnNotesView.swift */; };
 		376131E42446B31500A49C71 /* YnTasksAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376131E22446950400A49C71 /* YnTasksAPI.swift */; };
-		37748BA32414C20300E5FE24 /* YnListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37748BA22414C20300E5FE24 /* YnListsViewModel.swift */; };
 		3781B1F923FA361B0095CED9 /* YnTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B1F823FA361B0095CED9 /* YnTasksView.swift */; };
-		3781B1FD23FA76430095CED9 /* YnTaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781B1FC23FA76430095CED9 /* YnTaskModel.swift */; };
 		3781B3A823FB521C0095CED9 /* listsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3781B3A723FB521C0095CED9 /* listsData.json */; };
-		37B192CC26A51E8F001AECFE /* YnListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B192CB26A51E8F001AECFE /* YnListModel.swift */; };
 		37C7B7C623F67C4D000B0E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C7B7C523F67C4D000B0E07 /* AppDelegate.swift */; };
 		37C7B7C823F67C4D000B0E07 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C7B7C723F67C4D000B0E07 /* ContentView.swift */; };
 		37C7B7CA23F67C4F000B0E07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C7B7C923F67C4F000B0E07 /* Assets.xcassets */; };
@@ -23,45 +33,125 @@
 		37C7B7D023F67C4F000B0E07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C7B7CE23F67C4F000B0E07 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		372F502A2783842D006F08E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37C7B7BA23F67C4D000B0E07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 372F50192783842B006F08E6;
+			remoteInfo = "YnTasks iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		370B8C492783E0AD00B06553 /* YnListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnListsViewModel.swift; sourceTree = "<group>"; };
 		3711003D240E16CD0056B058 /* YnListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnListsView.swift; sourceTree = "<group>"; };
+		372F501A2783842B006F08E6 /* YnTasks iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YnTasks iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		372F501C2783842B006F08E6 /* YnTasks_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnTasks_iOSApp.swift; sourceTree = "<group>"; };
+		372F501E2783842B006F08E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		372F50202783842C006F08E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		372F50232783842C006F08E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		372F50292783842D006F08E6 /* YnTasks iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YnTasks iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		372F502D2783842D006F08E6 /* YnTasks_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnTasks_iOSTests.swift; sourceTree = "<group>"; };
 		376131E22446950400A49C71 /* YnTasksAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnTasksAPI.swift; sourceTree = "<group>"; };
-		37748BA22414C20300E5FE24 /* YnListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnListsViewModel.swift; sourceTree = "<group>"; };
 		3781B1F623FA35E50095CED9 /* YnRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnRowView.swift; sourceTree = "<group>"; };
 		3781B1F823FA361B0095CED9 /* YnTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnTasksView.swift; sourceTree = "<group>"; };
-		3781B1FC23FA76430095CED9 /* YnTaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnTaskModel.swift; sourceTree = "<group>"; };
 		3781B3A723FB521C0095CED9 /* listsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listsData.json; sourceTree = "<group>"; };
-		37B192CB26A51E8F001AECFE /* YnListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnListModel.swift; sourceTree = "<group>"; };
-		37C7B7C223F67C4D000B0E07 /* YnTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YnTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37C7B7C223F67C4D000B0E07 /* YnTasks macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YnTasks macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C7B7C523F67C4D000B0E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37C7B7C723F67C4D000B0E07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37C7B7C923F67C4F000B0E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37C7B7CC23F67C4F000B0E07 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		37C7B7CF23F67C4F000B0E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37C7B7D123F67C4F000B0E07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37C7B7D223F67C4F000B0E07 /* YnTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YnTasks.entitlements; sourceTree = "<group>"; };
 		37E341A926AD3075008DC8CB /* JSTasks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JSTasks; path = ..; sourceTree = "<group>"; };
 		37F513E2241D7E3700FF3FC8 /* YnNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnNotesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		37C7B7BF23F67C4D000B0E07 /* Frameworks */ = {
+		372F50172783842B006F08E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				370B8C462783DBAD00B06553 /* YnShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		372F50262783842D006F08E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37C7B7BF23F67C4D000B0E07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				370B8C482783DBB500B06553 /* YnShared in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37722E4A244041800080C606 /* Models */ = {
+		370B8C442783DBAD00B06553 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		371F01C8278394D300E05136 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3711003D240E16CD0056B058 /* YnListsView.swift */,
+				3781B1F823FA361B0095CED9 /* YnTasksView.swift */,
+				3781B1F623FA35E50095CED9 /* YnRowView.swift */,
+				37F513E2241D7E3700FF3FC8 /* YnNotesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		372F501B2783842B006F08E6 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				372F501C2783842B006F08E6 /* YnTasks_iOSApp.swift */,
+				372F501E2783842B006F08E6 /* ContentView.swift */,
+				372F50202783842C006F08E6 /* Assets.xcassets */,
+				372F50222783842C006F08E6 /* Preview Content */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		372F50222783842C006F08E6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				372F50232783842C006F08E6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		372F502C2783842D006F08E6 /* iOS Tests */ = {
+			isa = PBXGroup;
+			children = (
+				372F502D2783842D006F08E6 /* YnTasks_iOSTests.swift */,
+			);
+			path = "iOS Tests";
+			sourceTree = "<group>";
+		};
+		372F504C278387D8006F08E6 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				376131E22446950400A49C71 /* YnTasksAPI.swift */,
-				37B192CB26A51E8F001AECFE /* YnListModel.swift */,
-				3781B1FC23FA76430095CED9 /* YnTaskModel.swift */,
-				37748BA22414C20300E5FE24 /* YnListsViewModel.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		37722E4A244041800080C606 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				370B8C492783E0AD00B06553 /* YnListsViewModel.swift */,
 				3781B3A723FB521C0095CED9 /* listsData.json */,
 			);
 			path = Models;
@@ -70,17 +160,24 @@
 		37C7B7B923F67C4D000B0E07 = {
 			isa = PBXGroup;
 			children = (
-				37E341A926AD3075008DC8CB /* JSTasks */,
+				371F01C8278394D300E05136 /* Views */,
+				372F504C278387D8006F08E6 /* API */,
 				37722E4A244041800080C606 /* Models */,
+				372F501B2783842B006F08E6 /* iOS */,
+				372F502C2783842D006F08E6 /* iOS Tests */,
 				37C7B7C423F67C4D000B0E07 /* macOS */,
+				37E341A926AD3075008DC8CB /* JSTasks */,
 				37C7B7C323F67C4D000B0E07 /* Products */,
+				370B8C442783DBAD00B06553 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		37C7B7C323F67C4D000B0E07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37C7B7C223F67C4D000B0E07 /* YnTasks.app */,
+				37C7B7C223F67C4D000B0E07 /* YnTasks macOS.app */,
+				372F501A2783842B006F08E6 /* YnTasks iOS.app */,
+				372F50292783842D006F08E6 /* YnTasks iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,14 +187,9 @@
 			children = (
 				37C7B7C523F67C4D000B0E07 /* AppDelegate.swift */,
 				37C7B7C723F67C4D000B0E07 /* ContentView.swift */,
-				3711003D240E16CD0056B058 /* YnListsView.swift */,
-				3781B1F823FA361B0095CED9 /* YnTasksView.swift */,
-				3781B1F623FA35E50095CED9 /* YnRowView.swift */,
-				37F513E2241D7E3700FF3FC8 /* YnNotesView.swift */,
 				37C7B7C923F67C4F000B0E07 /* Assets.xcassets */,
 				37C7B7CE23F67C4F000B0E07 /* Main.storyboard */,
 				37C7B7D123F67C4F000B0E07 /* Info.plist */,
-				37C7B7D223F67C4F000B0E07 /* YnTasks.entitlements */,
 				37C7B7CB23F67C4F000B0E07 /* Preview Content */,
 			);
 			path = macOS;
@@ -114,9 +206,47 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		37C7B7C123F67C4D000B0E07 /* YnTasks */ = {
+		372F50192783842B006F08E6 /* YnTasks iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37C7B7D523F67C4F000B0E07 /* Build configuration list for PBXNativeTarget "YnTasks" */;
+			buildConfigurationList = 372F503B2783842D006F08E6 /* Build configuration list for PBXNativeTarget "YnTasks iOS" */;
+			buildPhases = (
+				372F50162783842B006F08E6 /* Sources */,
+				372F50172783842B006F08E6 /* Frameworks */,
+				372F50182783842B006F08E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "YnTasks iOS";
+			packageProductDependencies = (
+				370B8C452783DBAD00B06553 /* YnShared */,
+			);
+			productName = "YnTasks iOS";
+			productReference = 372F501A2783842B006F08E6 /* YnTasks iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		372F50282783842D006F08E6 /* YnTasks iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 372F503E2783842D006F08E6 /* Build configuration list for PBXNativeTarget "YnTasks iOSTests" */;
+			buildPhases = (
+				372F50252783842D006F08E6 /* Sources */,
+				372F50262783842D006F08E6 /* Frameworks */,
+				372F50272783842D006F08E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				372F502B2783842D006F08E6 /* PBXTargetDependency */,
+			);
+			name = "YnTasks iOSTests";
+			productName = "YnTasks iOSTests";
+			productReference = 372F50292783842D006F08E6 /* YnTasks iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		37C7B7C123F67C4D000B0E07 /* YnTasks macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37C7B7D523F67C4F000B0E07 /* Build configuration list for PBXNativeTarget "YnTasks macOS" */;
 			buildPhases = (
 				37C7B7BE23F67C4D000B0E07 /* Sources */,
 				37C7B7BF23F67C4D000B0E07 /* Frameworks */,
@@ -126,9 +256,12 @@
 			);
 			dependencies = (
 			);
-			name = YnTasks;
+			name = "YnTasks macOS";
+			packageProductDependencies = (
+				370B8C472783DBB500B06553 /* YnShared */,
+			);
 			productName = NotTODO;
-			productReference = 37C7B7C223F67C4D000B0E07 /* YnTasks.app */;
+			productReference = 37C7B7C223F67C4D000B0E07 /* YnTasks macOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,10 +270,17 @@
 		37C7B7BA23F67C4D000B0E07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1140;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = "Jeffrey Sulton";
 				TargetAttributes = {
+					372F50192783842B006F08E6 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					372F50282783842D006F08E6 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 372F50192783842B006F08E6;
+					};
 					37C7B7C123F67C4D000B0E07 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -159,12 +299,30 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				37C7B7C123F67C4D000B0E07 /* YnTasks */,
+				37C7B7C123F67C4D000B0E07 /* YnTasks macOS */,
+				372F50192783842B006F08E6 /* YnTasks iOS */,
+				372F50282783842D006F08E6 /* YnTasks iOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		372F50182783842B006F08E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372F50242783842C006F08E6 /* Preview Assets.xcassets in Resources */,
+				372F50212783842C006F08E6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		372F50272783842D006F08E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37C7B7C023F67C4D000B0E07 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,17 +337,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		372F50162783842B006F08E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372F501F2783842B006F08E6 /* ContentView.swift in Sources */,
+				372F504927838774006F08E6 /* YnTasksView.swift in Sources */,
+				372F504B2783878F006F08E6 /* YnNotesView.swift in Sources */,
+				372F504A2783877F006F08E6 /* YnRowView.swift in Sources */,
+				372F504827838766006F08E6 /* YnListsView.swift in Sources */,
+				372F5045278384E6006F08E6 /* YnTasksAPI.swift in Sources */,
+				372F501D2783842B006F08E6 /* YnTasks_iOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		372F50252783842D006F08E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372F502E2783842D006F08E6 /* YnTasks_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37C7B7BE23F67C4D000B0E07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3781B1FD23FA76430095CED9 /* YnTaskModel.swift in Sources */,
 				3760016F24479EA4009BCEE5 /* YnNotesView.swift in Sources */,
-				37B192CC26A51E8F001AECFE /* YnListModel.swift in Sources */,
 				3781B1F923FA361B0095CED9 /* YnTasksView.swift in Sources */,
 				3760016E24479B72009BCEE5 /* YnRowView.swift in Sources */,
+				370B8C4A2783E0AD00B06553 /* YnListsViewModel.swift in Sources */,
 				376131E42446B31500A49C71 /* YnTasksAPI.swift in Sources */,
-				37748BA32414C20300E5FE24 /* YnListsViewModel.swift in Sources */,
 				37C7B7C823F67C4D000B0E07 /* ContentView.swift in Sources */,
 				3711003E240E16CD0056B058 /* YnListsView.swift in Sources */,
 				37C7B7C623F67C4D000B0E07 /* AppDelegate.swift in Sources */,
@@ -197,6 +375,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		372F502B2783842D006F08E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 372F50192783842B006F08E6 /* YnTasks iOS */;
+			targetProxy = 372F502A2783842D006F08E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		37C7B7CE23F67C4F000B0E07 /* Main.storyboard */ = {
@@ -210,6 +396,118 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		372F503C2783842D006F08E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = Q3VLQUJKF5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.notlus.YnTasks-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		372F503D2783842D006F08E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = Q3VLQUJKF5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.notlus.YnTasks-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		372F503F2783842D006F08E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.notlus.YnTasks-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YnTasks iOS.app/YnTasks iOS";
+			};
+			name = Debug;
+		};
+		372F50402783842D006F08E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.notlus.YnTasks-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YnTasks iOS.app/YnTasks iOS";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		37C7B7D323F67C4F000B0E07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -236,6 +534,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -296,6 +595,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -370,6 +670,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		372F503B2783842D006F08E6 /* Build configuration list for PBXNativeTarget "YnTasks iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				372F503C2783842D006F08E6 /* Debug */,
+				372F503D2783842D006F08E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		372F503E2783842D006F08E6 /* Build configuration list for PBXNativeTarget "YnTasks iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				372F503F2783842D006F08E6 /* Debug */,
+				372F50402783842D006F08E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		37C7B7BD23F67C4D000B0E07 /* Build configuration list for PBXProject "YnTasksApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -379,7 +697,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37C7B7D523F67C4F000B0E07 /* Build configuration list for PBXNativeTarget "YnTasks" */ = {
+		37C7B7D523F67C4F000B0E07 /* Build configuration list for PBXNativeTarget "YnTasks macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37C7B7D623F67C4F000B0E07 /* Debug */,
@@ -389,6 +707,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		370B8C452783DBAD00B06553 /* YnShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = YnShared;
+		};
+		370B8C472783DBB500B06553 /* YnShared */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = YnShared;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 37C7B7BA23F67C4D000B0E07 /* Project object */;
 }
