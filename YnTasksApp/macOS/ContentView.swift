@@ -15,7 +15,7 @@ struct ContentView: View {
         VStack(alignment: .leading) {
             NavigationView {
                 HStack {
-                    YnListsView(listModel: listModel)
+                    YnListsView(viewModel: listModel)
                         .listStyle(SidebarListStyle())
                 }
             }
