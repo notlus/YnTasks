@@ -3,7 +3,7 @@
 //  YnTasks
 //
 //  Created by Jeffrey Sulton on 2/16/20.
-//  Copyright © 2020 Jeffrey Sulton. All rights reserved.
+//  Copyright © 2022 Jeffrey Sulton. All rights reserved.
 //
 
 import SwiftUI
@@ -26,30 +26,7 @@ struct YnTasksView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text(self.viewModel.listName)
-                    .font(.title)
-                    .bold()
-                    .padding()
-
-                Spacer()
-
-                VStack {
-                    Button {
-                        print("add")
-                        viewModel.tasks.append(
-                            YnTaskModel(
-                                id: UUID(),
-                                list: .init(id: viewModel.listID, name: viewModel.listName)))
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                    .font(.headline)
-
-                    Text("\(viewModel.tasks.count)")
-                }
-                .padding()
-            }
+            YnTasksHeaderView(viewModel: viewModel)
 
             List {
                 ForEach(viewModel.tasks, id: \.id) { _ in
@@ -63,7 +40,11 @@ struct YnTasksView: View {
 
 struct YnTasksView_Previews: PreviewProvider {
     static var previews: some View {
-        let tasks = [YnTaskModel(list: YnTaskModel.ListInfo(id: 1, name: "task"))]
+        let tasks = [
+            YnTaskModel(list: YnTaskModel.ListInfo(id: 1, name: "task 1")),
+            YnTaskModel(list: YnTaskModel.ListInfo(id: 2, name: "task 2"))
+        ]
+
         let viewModel = YnTasksViewModel(listID: 0, listName: "Preview List", tasks: tasks)
         return YnTasksView(viewModel: viewModel)
     }
