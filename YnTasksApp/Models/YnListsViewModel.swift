@@ -27,7 +27,9 @@ public final class YnListsViewModel: Codable, ObservableObject {
     @Published
     var list: [Int: String] = [:]
 
-    init() {}
+    init(lists: [YnListModel] = .init()) {
+        self.lists = lists
+    }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
