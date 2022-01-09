@@ -9,7 +9,7 @@
 import SwiftUI
 import YnShared
 
-struct JSTListRow: View {
+struct YnListRow: View {
     var list: YnListModel
 
     var body: some View {
@@ -45,7 +45,7 @@ struct YnListsView: View {
             List {
                 ForEach(listModel.lists, id: \.id) { list in
                     NavigationLink(destination: YnTasksView(viewModel: YnTasksViewModel(listID: list.id, listName: list.name, tasks: list.tasks))) {
-                        JSTListRow(list: list)
+                        YnListRow(list: list)
                     }
                 }
             }
