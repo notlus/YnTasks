@@ -34,7 +34,7 @@ struct YnListRow: View {
 }
 
 struct YnListsView: View {
-    @ObservedObject var listModel: YnListsViewModel
+    @ObservedObject var viewModel: YnListsViewModel
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -43,14 +43,14 @@ struct YnListsView: View {
                 .padding(.leading, 5)
                 .padding(.top, 10)
             List {
-                ForEach(listModel.lists, id: \.id) { list in
+                ForEach(viewModel.lists, id: \.id) { list in
                     NavigationLink(destination: YnTasksView(viewModel: YnTasksViewModel(listID: list.id, listName: list.name, tasks: list.tasks))) {
                         YnListRow(list: list)
                     }
                 }
             }
             Button(action: {
-                self.listModel.lists.append(YnListModel(id: 988, name: "New List"))
+                self.viewModel.lists.append(YnListModel(id: 988, name: "New List"))
 
             }) {
                 Image(systemName: "plus.circle")
