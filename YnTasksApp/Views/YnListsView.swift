@@ -15,17 +15,17 @@ struct YnListRow: View {
     var body: some View {
         HStack {
             Image(systemName: "list.bullet.circle")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 20, height: 20, alignment: .center)
+                .font(.system(size: 23.0))
 
             Text("\(list.name)")
-                .font(.subheadline)
+                .font(.system(size: 12.0))
+                .foregroundColor(.gray)
 
             Spacer()
 
-            Text("\(list.size)")
-                .font(.subheadline)
+            Text("\(list.taskCount)")
+                .font(.system(size: 13.0))
+                .foregroundColor(.gray)
         }
         .padding(.leading, 0)
         .padding(.top, 0)
@@ -68,6 +68,12 @@ struct YnListsView: View {
 
 struct YnListsView_Previews: PreviewProvider {
     static var previews: some View {
-        YnListsView(listModel: YnListsViewModel())
+        let models = [
+            YnListModel(id: 1, name: "List 1", tasks: .init()),
+            YnListModel(id: 1, name: "List 2", tasks: .init())
+        ]
+        
+        let viewModel = YnListsViewModel(lists: models)
+        YnListsView(viewModel: viewModel)
     }
 }
