@@ -10,6 +10,8 @@
 		370B8C462783DBAD00B06553 /* YnShared in Frameworks */ = {isa = PBXBuildFile; productRef = 370B8C452783DBAD00B06553 /* YnShared */; };
 		370B8C482783DBB500B06553 /* YnShared in Frameworks */ = {isa = PBXBuildFile; productRef = 370B8C472783DBB500B06553 /* YnShared */; };
 		370B8C4A2783E0AD00B06553 /* YnListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B8C492783E0AD00B06553 /* YnListsViewModel.swift */; };
+		370B8C4C278A31F500B06553 /* YnTasksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B8C4B278A31F500B06553 /* YnTasksHeaderView.swift */; };
+		370B8C4D278A31F500B06553 /* YnTasksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B8C4B278A31F500B06553 /* YnTasksHeaderView.swift */; };
 		3711003E240E16CD0056B058 /* YnListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711003D240E16CD0056B058 /* YnListsView.swift */; };
 		372F501D2783842B006F08E6 /* YnTasks_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F501C2783842B006F08E6 /* YnTasks_iOSApp.swift */; };
 		372F501F2783842B006F08E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F501E2783842B006F08E6 /* ContentView.swift */; };
@@ -45,8 +47,9 @@
 
 /* Begin PBXFileReference section */
 		370B8C492783E0AD00B06553 /* YnListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnListsViewModel.swift; sourceTree = "<group>"; };
+		370B8C4B278A31F500B06553 /* YnTasksHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnTasksHeaderView.swift; sourceTree = "<group>"; };
 		3711003D240E16CD0056B058 /* YnListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnListsView.swift; sourceTree = "<group>"; };
-		372F501A2783842B006F08E6 /* YnTasks iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YnTasks iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		372F501A2783842B006F08E6 /* YnTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YnTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		372F501C2783842B006F08E6 /* YnTasks_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnTasks_iOSApp.swift; sourceTree = "<group>"; };
 		372F501E2783842B006F08E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		372F50202783842C006F08E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +60,7 @@
 		3781B1F623FA35E50095CED9 /* YnRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnRowView.swift; sourceTree = "<group>"; };
 		3781B1F823FA361B0095CED9 /* YnTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnTasksView.swift; sourceTree = "<group>"; };
 		3781B3A723FB521C0095CED9 /* listsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = listsData.json; sourceTree = "<group>"; };
-		37C7B7C223F67C4D000B0E07 /* YnTasks macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YnTasks macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37C7B7C223F67C4D000B0E07 /* YnTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YnTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C7B7C523F67C4D000B0E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37C7B7C723F67C4D000B0E07 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37C7B7C923F67C4F000B0E07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 				3781B1F823FA361B0095CED9 /* YnTasksView.swift */,
 				3781B1F623FA35E50095CED9 /* YnRowView.swift */,
 				37F513E2241D7E3700FF3FC8 /* YnNotesView.swift */,
+				370B8C4B278A31F500B06553 /* YnTasksHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,8 +179,8 @@
 		37C7B7C323F67C4D000B0E07 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37C7B7C223F67C4D000B0E07 /* YnTasks macOS.app */,
-				372F501A2783842B006F08E6 /* YnTasks iOS.app */,
+				37C7B7C223F67C4D000B0E07 /* YnTasks.app */,
+				372F501A2783842B006F08E6 /* YnTasks.app */,
 				372F50292783842D006F08E6 /* YnTasks iOSTests.xctest */,
 			);
 			name = Products;
@@ -223,7 +227,7 @@
 				370B8C452783DBAD00B06553 /* YnShared */,
 			);
 			productName = "YnTasks iOS";
-			productReference = 372F501A2783842B006F08E6 /* YnTasks iOS.app */;
+			productReference = 372F501A2783842B006F08E6 /* YnTasks.app */;
 			productType = "com.apple.product-type.application";
 		};
 		372F50282783842D006F08E6 /* YnTasks iOSTests */ = {
@@ -261,7 +265,7 @@
 				370B8C472783DBB500B06553 /* YnShared */,
 			);
 			productName = NotTODO;
-			productReference = 37C7B7C223F67C4D000B0E07 /* YnTasks macOS.app */;
+			productReference = 37C7B7C223F67C4D000B0E07 /* YnTasks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -343,6 +347,7 @@
 			files = (
 				372F501F2783842B006F08E6 /* ContentView.swift in Sources */,
 				372F504927838774006F08E6 /* YnTasksView.swift in Sources */,
+				370B8C4D278A31F500B06553 /* YnTasksHeaderView.swift in Sources */,
 				372F504B2783878F006F08E6 /* YnNotesView.swift in Sources */,
 				372F504A2783877F006F08E6 /* YnRowView.swift in Sources */,
 				372F504827838766006F08E6 /* YnListsView.swift in Sources */,
@@ -365,6 +370,7 @@
 			files = (
 				3760016F24479EA4009BCEE5 /* YnNotesView.swift in Sources */,
 				3781B1F923FA361B0095CED9 /* YnTasksView.swift in Sources */,
+				370B8C4C278A31F500B06553 /* YnTasksHeaderView.swift in Sources */,
 				3760016E24479B72009BCEE5 /* YnRowView.swift in Sources */,
 				370B8C4A2783E0AD00B06553 /* YnListsViewModel.swift in Sources */,
 				376131E42446B31500A49C71 /* YnTasksAPI.swift in Sources */,
@@ -421,7 +427,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.notlus.YnTasks-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YnTasks;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -454,7 +460,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.notlus.YnTasks-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YnTasks;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -640,7 +646,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.notlus.YnTasks;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YnTasks;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -662,7 +668,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.notlus.YnTasks;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YnTasks;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
