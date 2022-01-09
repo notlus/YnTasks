@@ -52,13 +52,17 @@ struct YnListsView: View {
                 self.listModel.lists.append(YnListModel(id: 988, name: "New List"))
 
             }) {
-                Text("+")
+                Image(systemName: "plus.circle")
                     .font(.headline)
                     .padding(.leading, 0)
                 Text("Add List")
-                    .font(.system(.footnote))
+                    .font(.system(size: 13.0))
             }
+            .foregroundColor(.gray)
+            .padding([.bottom, .leading], 5.0)
+            .buttonStyle(.plain)
         }
+        
     }
 }
 
