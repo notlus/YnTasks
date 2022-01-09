@@ -14,7 +14,7 @@ struct JSTListRow: View {
 
     var body: some View {
         HStack {
-            Image("info")
+            Image(systemName: "list.bullet.circle")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 20, height: 20, alignment: .center)
@@ -39,6 +39,7 @@ struct YnListsView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("My Lists")
+                .foregroundColor(.gray)
                 .padding(.leading, 5)
                 .padding(.top, 10)
             List {
@@ -62,7 +63,6 @@ struct YnListsView: View {
             .padding([.bottom, .leading], 5.0)
             .buttonStyle(.plain)
         }
-        
     }
 }
 
