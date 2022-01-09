@@ -15,7 +15,7 @@ public struct YnListModel: Codable, Identifiable {
     public var tasks: [YnTaskModel] = .init()
     public var id: Int
     public var name: String
-    public var size: Int {
+    public var taskCount: Int {
         tasks.count
     }
 
