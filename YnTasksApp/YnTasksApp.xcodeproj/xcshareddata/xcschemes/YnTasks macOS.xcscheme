@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "37C7B7C123F67C4D000B0E07"
-               BuildableName = "YnTasks macOS.app"
+               BuildableName = "YnTasks.app"
                BlueprintName = "YnTasks macOS"
                ReferencedContainer = "container:YnTasksApp.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37C7B7C123F67C4D000B0E07"
-            BuildableName = "YnTasks macOS.app"
+            BuildableName = "YnTasks.app"
             BlueprintName = "YnTasks macOS"
             ReferencedContainer = "container:YnTasksApp.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "37C7B7C123F67C4D000B0E07"
-            BuildableName = "YnTasks macOS.app"
+            BuildableName = "YnTasks.app"
             BlueprintName = "YnTasks macOS"
             ReferencedContainer = "container:YnTasksApp.xcodeproj">
          </BuildableReference>
