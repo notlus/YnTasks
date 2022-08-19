@@ -38,6 +38,7 @@ struct YnListsView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
+            YnCardView(viewModel: YnCardViewModel(iconName: "calendar.circle", name: "All", taskCount: 0))
             Text("My Lists")
                 .foregroundColor(.gray)
                 .padding(.leading, 5)

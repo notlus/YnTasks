@@ -13,6 +13,8 @@
 		370B8C4C278A31F500B06553 /* YnTasksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B8C4B278A31F500B06553 /* YnTasksHeaderView.swift */; };
 		370B8C4D278A31F500B06553 /* YnTasksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B8C4B278A31F500B06553 /* YnTasksHeaderView.swift */; };
 		370B8C4E278AA3E200B06553 /* YnListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B8C492783E0AD00B06553 /* YnListsViewModel.swift */; };
+		370B8C5A278BF08D00B06553 /* YnCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B8C59278BF08D00B06553 /* YnCardView.swift */; };
+		370B8C5B278BF08D00B06553 /* YnCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370B8C59278BF08D00B06553 /* YnCardView.swift */; };
 		3711003E240E16CD0056B058 /* YnListsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711003D240E16CD0056B058 /* YnListsView.swift */; };
 		372F501D2783842B006F08E6 /* YnTasks_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F501C2783842B006F08E6 /* YnTasks_iOSApp.swift */; };
 		372F501F2783842B006F08E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F501E2783842B006F08E6 /* ContentView.swift */; };
@@ -49,6 +51,7 @@
 /* Begin PBXFileReference section */
 		370B8C492783E0AD00B06553 /* YnListsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnListsViewModel.swift; sourceTree = "<group>"; };
 		370B8C4B278A31F500B06553 /* YnTasksHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnTasksHeaderView.swift; sourceTree = "<group>"; };
+		370B8C59278BF08D00B06553 /* YnCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YnCardView.swift; sourceTree = "<group>"; };
 		3711003D240E16CD0056B058 /* YnListsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnListsView.swift; sourceTree = "<group>"; };
 		372F501A2783842B006F08E6 /* YnTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YnTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		372F501C2783842B006F08E6 /* YnTasks_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YnTasks_iOSApp.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		371F01C8278394D300E05136 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				370B8C59278BF08D00B06553 /* YnCardView.swift */,
 				3711003D240E16CD0056B058 /* YnListsView.swift */,
 				3781B1F823FA361B0095CED9 /* YnTasksView.swift */,
 				3781B1F623FA35E50095CED9 /* YnRowView.swift */,
@@ -355,6 +359,7 @@
 				370B8C4E278AA3E200B06553 /* YnListsViewModel.swift in Sources */,
 				372F5045278384E6006F08E6 /* YnTasksAPI.swift in Sources */,
 				372F501D2783842B006F08E6 /* YnTasks_iOSApp.swift in Sources */,
+				370B8C5B278BF08D00B06553 /* YnCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +384,7 @@
 				37C7B7C823F67C4D000B0E07 /* ContentView.swift in Sources */,
 				3711003E240E16CD0056B058 /* YnListsView.swift in Sources */,
 				37C7B7C623F67C4D000B0E07 /* AppDelegate.swift in Sources */,
+				370B8C5A278BF08D00B06553 /* YnCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
