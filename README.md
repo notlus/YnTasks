@@ -37,6 +37,10 @@ App ->> Client: [ListModel JSON]
 @enduml
 ```
 
+## Clients
+
+The macOS and iOS clients are SwiftUI applications located in `YnTasksApp/`. They share common views and a `YnListsViewModel` through the `YnTasksApp/Shared/` directory, and communicate with the backend via a shared API client (`YnTasksAPI`).
+
 ## Backend
 
 The server is written using the [Vapor](https://vapor.codes) framework and uses [PostgreSQL](https://www.postgresql.org/) for its database.
@@ -66,6 +70,11 @@ A task is a single thing to be done. Tasks can belong to a single list.
 * notes
 * due-date
 * priority
+* complete
+
+#### Health Check
+
+* `get health`: Check application status
 
 #### List Routes
 
@@ -78,11 +87,12 @@ A task is a single thing to be done. Tasks can belong to a single list.
 * `get api/tasks`
 * `get task/taskID`
 * `post api/task`
+* `patch api/task/taskID`
 * `delete api/task/taskID`
 
 ### Database
 
-A PostgreSQL database, named `YnTasks` is used to store all of the data for the application.related to  and contains two tables, `lists` and `tasks`.
+A PostgreSQL database, named `YnTasks` is used to store all of the data for the application and contains two tables, `lists` and `tasks`.
 
 #### Tables
 
@@ -95,7 +105,12 @@ A PostgreSQL database, named `YnTasks` is used to store all of the data for the 
   * priority
   * notes
   * due date
+  * complete
+
+### YnShared
+
+A shared Swift library (`YnShared`) contains Codable models (`YnListModel`, `YnTaskModel`) used by both the backend and the client applications.
 
 ### Deployment
 
-The server is designed to be deployed as a [Docker](https://www.docker.com/) container.
+The server is designed to be deployed as a [Docker](https://www.docker.com/) container. The Docker Compose configuration includes an [nginx](https://nginx.org/) reverse proxy and [Certbot](https://certbot.eff.org/) for Let's Encrypt SSL/TLS certificate management.
